@@ -13,7 +13,7 @@
         }
         
         body {
-            background-color: #f0f7ff;
+            background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
             padding: 20px;
@@ -23,39 +23,35 @@
         
         .header {
             text-align: center;
-            padding: 25px;
-            background: linear-gradient(135deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
+            padding: 20px;
+            background-color: #1e5799;
             color: white;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-bottom: 20px;
         }
         
         .header h1 {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             margin-bottom: 10px;
         }
         
         .header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
         }
         
         .instructions {
             background-color: #e8f4fd;
             border-left: 5px solid #2989d8;
-            padding: 20px;
-            margin-bottom: 30px;
+            padding: 15px;
+            margin-bottom: 20px;
             border-radius: 5px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
         }
         
         .instructions h2 {
             color: #1e5799;
-            margin-bottom: 10px;
-            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
         }
         
         .instructions ul {
@@ -63,76 +59,57 @@
         }
         
         .instructions li {
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
         
         .quiz-container {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 25px;
+            gap: 20px;
         }
         
         .question-box {
             background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
             position: relative;
             counter-increment: question-counter;
-        }
-        
-        .question-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
         
         .question-box::before {
             content: "Câu " counter(question-counter) ":";
             position: absolute;
-            top: -12px;
-            left: 20px;
+            top: -10px;
+            left: 15px;
             background-color: #1e5799;
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 3px 10px;
+            border-radius: 15px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
         
         .question-text {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #1a4a7a;
         }
         
         .options {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
         
         .option {
             display: flex;
             align-items: flex-start;
-            padding: 12px 15px;
+            padding: 10px;
             background-color: #f8fafd;
-            border-radius: 8px;
+            border-radius: 5px;
             border: 1px solid #d1e3f8;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        .option:hover {
-            background-color: #e8f2ff;
-            border-color: #a8cdf5;
-        }
-        
-        .option input {
-            margin-right: 12px;
-            margin-top: 3px;
-            cursor: pointer;
         }
         
         .option-label {
@@ -142,767 +119,554 @@
             min-width: 25px;
         }
         
-        .actions {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
+        @media (max-width: 768px) {
+            .question-box {
+                padding: 15px 10px;
+            }
+            
+            .question-text {
+                font-size: 1rem;
+            }
         }
         
-        .btn {
-            padding: 14px 30px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-submit {
-            background-color: #1e5799;
-            color: white;
-        }
-        
-        .btn-submit:hover {
-            background-color: #16437e;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(30, 87, 153, 0.3);
-        }
-        
-        .btn-reset {
-            background-color: #f0f7ff;
-            color: #1e5799;
-            border: 2px solid #1e5799;
-        }
-        
-        .btn-reset:hover {
-            background-color: #e1edff;
-            transform: translateY(-3px);
-        }
-        
-        .results {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
+        footer {
+            text-align: center;
             margin-top: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            display: none;
-        }
-        
-        .results-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #f0f7ff;
-        }
-        
-        .results-title {
-            font-size: 1.5rem;
-            color: #1e5799;
-            font-weight: 700;
-        }
-        
-        .score {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #1e5799;
-        }
-        
-        .score-details {
-            font-size: 1.1rem;
-            color: #555;
+            padding-top: 15px;
+            border-top: 1px solid #d1e3f8;
+            color: #666;
+            font-size: 0.9rem;
         }
         
         .answer-key {
-            margin-top: 25px;
             background-color: #f8fafd;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
         }
         
         .answer-key h3 {
             color: #1e5799;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
         
         .answer-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
+            gap: 8px;
         }
         
         .answer-item {
-            padding: 8px 12px;
+            padding: 6px 10px;
             background-color: white;
-            border-radius: 5px;
+            border-radius: 3px;
             border-left: 4px solid #1e5799;
-        }
-        
-        .feedback {
-            margin-top: 15px;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-        
-        .excellent {
-            background-color: #e8f7ef;
-            color: #0a7c42;
-            border-left: 5px solid #0a7c42;
-        }
-        
-        .good {
-            background-color: #e8f4fd;
-            color: #1e5799;
-            border-left: 5px solid #1e5799;
-        }
-        
-        .average {
-            background-color: #fff8e8;
-            color: #c97b0e;
-            border-left: 5px solid #c97b0e;
-        }
-        
-        .poor {
-            background-color: #feefef;
-            color: #d63031;
-            border-left: 5px solid #d63031;
-        }
-        
-        .correct-answer {
-            background-color: #e8f7ef !important;
-            border-color: #0a7c42 !important;
-        }
-        
-        .incorrect-answer {
-            background-color: #feefef !important;
-            border-color: #d63031 !important;
+            font-size: 0.9rem;
         }
         
         .correct-option {
             color: #0a7c42;
             font-weight: bold;
         }
-        
-        @media (max-width: 768px) {
-            .question-box {
-                padding: 20px 15px;
-            }
-            
-            .question-text {
-                font-size: 1.1rem;
-            }
-            
-            .btn {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            
-            .actions {
-                flex-direction: column;
-            }
-            
-            .answer-list {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #d1e3f8;
-            color: #666;
-            font-size: 0.9rem;
-        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>TRẮC NGHIỆM: GIAO LƯU TÌM HIỂU NGHỀ NGHIỆP</h1>
-        <p>Hoạt động trải nghiệm - Chủ đề 9: Tìm hiểu nghề nghiệp - Sinh hoạt dưới cờ lớp 10 (Kết nối tri thức với cuộc sống)</p>
+        <p>Hoạt động trải nghiệm - Chủ đề 9: Tìm hiểu nghề nghiệp - SHDC lớp 10 (KNTT)</p>
     </div>
     
     <div class="instructions">
-        <h2>Hướng dẫn làm bài</h2>
-        <ul>
-            <li>Đọc kỹ từng câu hỏi và chọn <strong>một đáp án đúng nhất</strong> trong 4 lựa chọn.</li>
-            <li>Bài trắc nghiệm gồm 20 câu, mỗi câu đúng được tính 0.5 điểm.</li>
-            <li>Sau khi hoàn thành tất cả câu hỏi, nhấn nút <strong>"Nộp bài và xem kết quả"</strong> để biết điểm số và đáp án đúng.</li>
-            <li>Nhấn <strong>"Làm lại bài trắc nghiệm"</strong> để thực hiện lại từ đầu.</li>
-        </ul>
+        <h2>Đề bài: 20 câu trắc nghiệm</h2>
+        <p>Chọn đáp án đúng nhất cho mỗi câu hỏi sau:</p>
     </div>
     
-    <form id="quizForm">
-        <div class="quiz-container">
-            <!-- Câu hỏi 1 -->
-            <div class="question-box">
-                <div class="question-text">Mục tiêu chính của buổi giao lưu tìm hiểu nghề nghiệp trong SHDC là gì?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q1" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Giúp học sinh giải trí, thư giãn sau giờ học.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q1" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Giúp học sinh có cái nhìn thực tế về thế giới nghề nghiệp từ người trong nghề.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q1" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Tạo điều kiện để học sinh thể hiện tài năng văn nghệ.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q1" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Tổ chức một buổi sinh hoạt theo đúng kế hoạch của nhà trường.</span>
-                    </label>
+    <div class="quiz-container">
+        <!-- Câu hỏi 1 -->
+        <div class="question-box">
+            <div class="question-text">Mục tiêu chính của buổi giao lưu tìm hiểu nghề nghiệp trong SHDC là gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Giúp học sinh giải trí, thư giãn sau giờ học.</span>
                 </div>
-            </div>
-            
-            <!-- Câu hỏi 2 -->
-            <div class="question-box">
-                <div class="question-text">Đối tượng nào thường được mời làm diễn giả chính trong buổi giao lưu này?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q2" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Phụ huynh học sinh bất kỳ.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q2" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Giáo viên chủ nhiệm các lớp.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q2" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Các chuyên gia, người thành công trong nhiều lĩnh vực nghề nghiệp khác nhau.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q2" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Chỉ có hiệu trưởng và ban giám hiệu nhà trường.</span>
-                    </label>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Giúp học sinh có cái nhìn thực tế về thế giới nghề nghiệp từ người trong nghề.</span>
                 </div>
-            </div>
-            
-            <!-- Câu hỏi 3 -->
-            <div class="question-box">
-                <div class="question-text">Trước buổi giao lưu, học sinh cần làm gì để buổi nói chuyện hiệu quả?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q3" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Không cần chuẩn bị gì, chỉ cần ngồi nghe.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q3" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Chuẩn bị trước một số câu hỏi về nghề nghiệp mà mình quan tâm.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q3" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Chỉ cần mang theo sách vở để ghi chép.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q3" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Chuẩn bị các tiết mục văn nghệ để chào mừng.</span>
-                    </label>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Tạo điều kiện để học sinh thể hiện tài năng văn nghệ.</span>
                 </div>
-            </div>
-            
-            <!-- Câu hỏi 4 -->
-            <div class="question-box">
-                <div class="question-text">Kỹ năng nào sau đây được rèn luyện thông qua việc đặt câu hỏi cho khách mời?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q4" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Kỹ năng thể thao.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q4" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Kỹ năng giao tiếp, đặt câu hỏi và tư duy phản biện.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q4" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Kỹ năng vẽ tranh.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q4" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Kỹ năng làm việc độc lập hoàn toàn.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 5 -->
-            <div class="question-box">
-                <div class="question-text">Thông tin nào sau đây là HỮU ÍCH nhất mà học sinh có thể thu nhận được từ buổi giao lưu?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q5" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Mức lương cụ thể của từng vị trí công việc.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q5" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Những khó khăn, thách thức, yêu cầu của nghề và cách người diễn giả vượt qua.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q5" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Lịch trình làm việc một ngày của diễn giả.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q5" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Quan hệ gia đình của người diễn giả.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 6 -->
-            <div class="question-box">
-                <div class="question-text">Sau buổi giao lưu, học sinh nên làm gì để phát huy hiệu quả?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q6" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Bỏ qua vì đó chỉ là một buổi ngoại khóa.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q6" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Suy ngẫm, tổng hợp thông tin và đối chiếu với sở thích, năng lực bản thân.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q6" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Chỉ cần nộp lại bài thu hoạch nếu giáo viên yêu cầu.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q6" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Kể lại với bạn bè về ngoại hình của khách mời.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 7 -->
-            <div class="question-box">
-                <div class="question-text">Vai trò của giáo viên (hoặc ban cán sự lớp) trong buổi giao lưu là gì?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q7" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Là người dẫn chương trình, điều phối, khuyến khích học sinh đặt câu hỏi.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q7" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Là người nói chuyện chính trong suốt buổi.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q7" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Ngồi phía sau và không tham gia.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q7" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Kiểm tra kỷ luật, nhắc nhở học sinh không nói chuyện riêng.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 8 -->
-            <div class="question-box">
-                <div class="question-text">Việc lắng nghe và ghi chép trong buổi giao lưu giúp ích gì?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q8" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Giúp học sinh có tài liệu để đối phó khi bị kiểm tra.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q8" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Rèn luyện kỹ năng nghe chủ động và chắt lọc thông tin quan trọng.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q8" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Chứng tỏ bản thân là người chăm chỉ.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q8" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Làm cho khách mời vui lòng.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 9 -->
-            <div class="question-box">
-                <div class="question-text">Một buổi giao lưu nghề nghiệp hiệu quả thường có cấu trúc như thế nào?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q9" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Chỉ có phần thuyết trình một chiều từ khách mời.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q9" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Bao gồm phần giới thiệu, chia sẻ của khách mời và phần tương tác hỏi đáp với học sinh.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q9" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Chỉ tổ chức trò chơi và văn nghệ.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q9" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Học sinh tự do trao đổi với nhau về nghề nghiệp mà không có sự dẫn dắt.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 10 -->
-            <div class="question-box">
-                <div class="question-text">Câu hỏi nào dưới đây là phù hợp và lịch sự khi đặt cho khách mời?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q10" value="A">
-                        <span class="option-label">A.</span>
-                        <span>"Lương của chú một tháng bao nhiêu?"</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q10" value="B">
-                        <span class="option-label">B.</span>
-                        <span>"Để thành công trong nghề này, theo chú, tố chất quan trọng nhất là gì ạ?"</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q10" value="C">
-                        <span class="option-label">C.</span>
-                        <span>"Chú có thích sếp của mình không?"</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q10" value="D">
-                        <span class="option-label">D.</span>
-                        <span>"Chú dùng điện thoại hãng gì?"</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 11 -->
-            <div class="question-box">
-                <div class="question-text">Tại sao nên mời khách mời từ nhiều lĩnh vực nghề nghiệp khác nhau?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q11" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Để học sinh thấy sự đa dạng và có nhiều lựa chọn tham khảo.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q11" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Để buổi giao lưu được lâu hơn.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q11" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Để thể hiện nhà trường có nhiều mối quan hệ.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q11" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Vì giáo viên không biết nên mời ai.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 12 -->
-            <div class="question-box">
-                <div class="question-text">Yếu tố nào quan trọng nhất tạo nên thành công của một buổi giao lưu?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q12" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Số lượng khách mời thật nhiều.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q12" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Sự tương tác tích cực, chân thành giữa diễn giả và học sinh.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q12" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Hội trường được trang trí lộng lẫy.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q12" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Có nhiều phần quà giá trị.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 13 -->
-            <div class="question-box">
-                <div class="question-text">Buổi giao lưu này là một phần trong chủ đề lớn nào của Hoạt động trải nghiệm 10 KNTT?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q13" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Chủ đề về Văn hóa ứng xử.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q13" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Chủ đề về Tìm hiểu nghề nghiệp.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q13" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Chủ đề về Rèn luyện thể chất.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q13" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Chủ đề về Bảo vệ môi trường.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 14 -->
-            <div class="question-box">
-                <div class="question-text">Hoạt động giao lưu này góp phần trực tiếp vào việc nào sau đây?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q14" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Nâng cao thành tích học tập các môn văn hóa.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q14" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Định hướng nghề nghiệp tương lai cho học sinh.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q14" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Tuyển dụng học sinh vào các công ty của khách mời.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q14" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Quảng bá hình ảnh của nhà trường.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 15 -->
-            <div class="question-box">
-                <div class="question-text">Nếu được chọn, em sẽ đặt câu hỏi nào để tìm hiểu sâu hơn về con đường phát triển trong nghề?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q15" value="A">
-                        <span class="option-label">A.</span>
-                        <span>"Công việc hàng ngày của chú có nhàm chán không?"</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q15" value="B">
-                        <span class="option-label">B.</span>
-                        <span>"Chú có thể chia sẻ về các bước thăng tiến hoặc các hướng phát triển chuyên môn trong ngành này không ạ?"</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q15" value="C">
-                        <span class="option-label">C.</span>
-                        <span>"Chú làm nghề này có giàu không?"</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q15" value="D">
-                        <span class="option-label">D.</span>
-                        <span>"Chú có phải đi công tác nước ngoài nhiều không?"</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 16 -->
-            <div class="question-box">
-                <div class="question-text">Thái độ nào sau đây là KHÔNG NÊN có khi tham gia buổi giao lưu?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q16" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Tôn trọng, lịch sự với khách mời.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q16" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Chủ động, tự tin khi đặt câu hỏi.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q16" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Ngồi nói chuyện riêng, làm việc riêng trong suốt buổi.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q16" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Lắng nghe và ghi chép cẩn thận.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 17 -->
-            <div class="question-box">
-                <div class="question-text">Việc nhà trường tổ chức giao lưu nghề nghiệp chứng tỏ điều gì?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q17" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Nhà trường chỉ quan tâm đến học sinh giỏi.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q17" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Nhà trường quan tâm đến việc trang bị kiến thức, kỹ năng và định hướng tương lai toàn diện cho học sinh.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q17" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Nhà trường muốn phô trương thành tích.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q17" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Đây là một hoạt động bắt buộc theo chỉ đạo của cấp trên.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 18 -->
-            <div class="question-box">
-                <div class="question-text">Câu hỏi về "sự thay đổi của nghề nghiệp trong thời đại 4.0" là câu hỏi thuộc nhóm nội dung nào?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q18" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Nhóm câu hỏi về đời tư cá nhân.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q18" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Nhóm câu hỏi về xu hướng và yêu cầu mới của nghề nghiệp.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q18" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Nhóm câu hỏi về lợi ích vật chất.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q18" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Nhóm câu hỏi không liên quan.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 19 -->
-            <div class="question-box">
-                <div class="question-text">Sau buổi giao lưu, học sinh có thể áp dụng ngay điều gì?</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q19" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Biết ngay mình sẽ làm nghề gì.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q19" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Có thêm thông tin để điều chỉnh kế hoạch học tập, rèn luyện bản thân phù hợp với định hướng nghề nghiệp quan tâm.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q19" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Có thể xin vào làm việc cho công ty của khách mời.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q19" value="D">
-                        <span class="option-label">D.</span>
-                        <span>So sánh mức lương của các nghề với nhau.</span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Câu hỏi 20 -->
-            <div class="question-box">
-                <div class="question-text">Khi khách mời trả lời chưa đúng trọng tâm câu hỏi, em nên:</div>
-                <div class="options">
-                    <label class="option">
-                        <input type="radio" name="q20" value="A">
-                        <span class="option-label">A.</span>
-                        <span>Ngắt lời và yêu cầu trả lời lại.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q20" value="B">
-                        <span class="option-label">B.</span>
-                        <span>Tỏ thái độ không hài lòng (lắc đầu, ngáp dài).</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q20" value="C">
-                        <span class="option-label">C.</span>
-                        <span>Lắng nghe hết, có thể đặt lại câu hỏi theo cách khác ở cuối phần chia sẻ.</span>
-                    </label>
-                    <label class="option">
-                        <input type="radio" name="q20" value="D">
-                        <span class="option-label">D.</span>
-                        <span>Đứng dậy bỏ về vì không hài lòng.</span>
-                    </label>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Tổ chức một buổi sinh hoạt theo đúng kế hoạch của nhà trường.</span>
                 </div>
             </div>
         </div>
         
-        <div class="actions">
-            <button type="button" class="btn btn-submit" id="submitBtn">Nộp bài và xem kết quả</button>
-            <button type="button" class="btn btn-reset" id="resetBtn">Làm lại bài trắc nghiệm</button>
+        <!-- Câu hỏi 2 -->
+        <div class="question-box">
+            <div class="question-text">Đối tượng nào thường được mời làm diễn giả chính trong buổi giao lưu này?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Phụ huynh học sinh bất kỳ.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Giáo viên chủ nhiệm các lớp.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Các chuyên gia, người thành công trong nhiều lĩnh vực nghề nghiệp khác nhau.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Chỉ có hiệu trưởng và ban giám hiệu nhà trường.</span>
+                </div>
+            </div>
         </div>
-    </form>
+        
+        <!-- Câu hỏi 3 -->
+        <div class="question-box">
+            <div class="question-text">Trước buổi giao lưu, học sinh cần làm gì để buổi nói chuyện hiệu quả?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Không cần chuẩn bị gì, chỉ cần ngồi nghe.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Chuẩn bị trước một số câu hỏi về nghề nghiệp mà mình quan tâm.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Chỉ cần mang theo sách vở để ghi chép.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Chuẩn bị các tiết mục văn nghệ để chào mừng.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 4 -->
+        <div class="question-box">
+            <div class="question-text">Kỹ năng nào sau đây được rèn luyện thông qua việc đặt câu hỏi cho khách mời?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Kỹ năng thể thao.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Kỹ năng giao tiếp, đặt câu hỏi và tư duy phản biện.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Kỹ năng vẽ tranh.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Kỹ năng làm việc độc lập hoàn toàn.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 5 -->
+        <div class="question-box">
+            <div class="question-text">Thông tin nào sau đây là HỮU ÍCH nhất mà học sinh có thể thu nhận được từ buổi giao lưu?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Mức lương cụ thể của từng vị trí công việc.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Những khó khăn, thách thức, yêu cầu của nghề và cách người diễn giả vượt qua.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Lịch trình làm việc một ngày của diễn giả.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Quan hệ gia đình của người diễn giả.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 6 -->
+        <div class="question-box">
+            <div class="question-text">Sau buổi giao lưu, học sinh nên làm gì để phát huy hiệu quả?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Bỏ qua vì đó chỉ là một buổi ngoại khóa.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Suy ngẫm, tổng hợp thông tin và đối chiếu với sở thích, năng lực bản thân.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Chỉ cần nộp lại bài thu hoạch nếu giáo viên yêu cầu.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Kể lại với bạn bè về ngoại hình của khách mời.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 7 -->
+        <div class="question-box">
+            <div class="question-text">Vai trò của giáo viên (hoặc ban cán sự lớp) trong buổi giao lưu là gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Là người dẫn chương trình, điều phối, khuyến khích học sinh đặt câu hỏi.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Là người nói chuyện chính trong suốt buổi.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Ngồi phía sau và không tham gia.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Kiểm tra kỷ luật, nhắc nhở học sinh không nói chuyện riêng.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 8 -->
+        <div class="question-box">
+            <div class="question-text">Việc lắng nghe và ghi chép trong buổi giao lưu giúp ích gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Giúp học sinh có tài liệu để đối phó khi bị kiểm tra.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Rèn luyện kỹ năng nghe chủ động và chắt lọc thông tin quan trọng.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Chứng tỏ bản thân là người chăm chỉ.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Làm cho khách mời vui lòng.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 9 -->
+        <div class="question-box">
+            <div class="question-text">Một buổi giao lưu nghề nghiệp hiệu quả thường có cấu trúc như thế nào?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Chỉ có phần thuyết trình một chiều từ khách mời.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Bao gồm phần giới thiệu, chia sẻ của khách mời và phần tương tác hỏi đáp với học sinh.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Chỉ tổ chức trò chơi và văn nghệ.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Học sinh tự do trao đổi với nhau về nghề nghiệp mà không có sự dẫn dắt.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 10 -->
+        <div class="question-box">
+            <div class="question-text">Câu hỏi nào dưới đây là phù hợp và lịch sự khi đặt cho khách mời?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>"Lương của chú một tháng bao nhiêu?"</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>"Để thành công trong nghề này, theo chú, tố chất quan trọng nhất là gì ạ?"</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>"Chú có thích sếp của mình không?"</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>"Chú dùng điện thoại hãng gì?"</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 11 -->
+        <div class="question-box">
+            <div class="question-text">Tại sao nên mời khách mời từ nhiều lĩnh vực nghề nghiệp khác nhau?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Để học sinh thấy sự đa dạng và có nhiều lựa chọn tham khảo.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Để buổi giao lưu được lâu hơn.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Để thể hiern nhà trường có nhiều mối quan hệ.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Vì giáo viên không biết nên mời ai.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 12 -->
+        <div class="question-box">
+            <div class="question-text">Yếu tố nào quan trọng nhất tạo nên thành công của một buổi giao lưu?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Số lượng khách mời thật nhiều.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Sự tương tác tích cực, chân thành giữa diễn giả và học sinh.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Hội trường được trang trí lộng lẫy.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Có nhiều phần quà giá trị.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 13 -->
+        <div class="question-box">
+            <div class="question-text">Buổi giao lưu này là một phần trong chủ đề lớn nào của Hoạt động trải nghiệm 10 KNTT?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Chủ đề về Văn hóa ứng xử.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Chủ đề về Tìm hiểu nghề nghiệp.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Chủ đề về Rèn luyện thể chất.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Chủ đề về Bảo vệ môi trường.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 14 -->
+        <div class="question-box">
+            <div class="question-text">Hoạt động giao lưu này góp phần trực tiếp vào việc nào sau đây?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Nâng cao thành tích học tập các môn văn hóa.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Định hướng nghề nghiệp tương lai cho học sinh.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Tuyển dụng học sinh vào các công ty của khách mời.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Quảng bá hình ảnh của nhà trường.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 15 -->
+        <div class="question-box">
+            <div class="question-text">Nếu được chọn, em sẽ đặt câu hỏi nào để tìm hiểu sâu hơn về con đường phát triển trong nghề?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>"Công việc hàng ngày của chú có nhàm chán không?"</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>"Chú có thể chia sẻ về các bước thăng tiến hoặc các hướng phát triển chuyên môn trong ngành này không ạ?"</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>"Chú làm nghề này có giàu không?"</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>"Chú có phải đi công tác nước ngoài nhiều không?"</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 16 -->
+        <div class="question-box">
+            <div class="question-text">Thái độ nào sau đây là KHÔNG NÊN có khi tham gia buổi giao lưu?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Tôn trọng, lịch sự với khách mời.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Chủ động, tự tin khi đặt câu hỏi.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Ngồi nói chuyện riêng, làm việc riêng trong suốt buổi.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Lắng nghe và ghi chép cẩn thận.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 17 -->
+        <div class="question-box">
+            <div class="question-text">Việc nhà trường tổ chức giao lưu nghề nghiệp chứng tỏ điều gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Nhà trường chỉ quan tâm đến học sinh giỏi.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Nhà trường quan tâm đến việc trang bị kiến thức, kỹ năng và định hướng tương lai toàn diện cho học sinh.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Nhà trường muốn phô trương thành tích.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Đây là một hoạt động bắt buộc theo chỉ đạo của cấp trên.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 18 -->
+        <div class="question-box">
+            <div class="question-text">Câu hỏi về "sự thay đổi của nghề nghiệp trong thời đại 4.0" là câu hỏi thuộc nhóm nội dung nào?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Nhóm câu hỏi về đời tư cá nhân.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Nhóm câu hỏi về xu hướng và yêu cầu mới của nghề nghiệp.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Nhóm câu hỏi về lợi ích vật chất.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Nhóm câu hỏi không liên quan.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 19 -->
+        <div class="question-box">
+            <div class="question-text">Sau buổi giao lưu, học sinh có thể áp dụng ngay điều gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Biết ngay mình sẽ làm nghề gì.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Có thêm thông tin để điều chỉnh kế hoạch học tập, rèn luyện bản thân phù hợp với định hướng nghề nghiệp quan tâm.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Có thể xin vào làm việc cho công ty của khách mời.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>So sánh mức lương của các nghề với nhau.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 20 -->
+        <div class="question-box">
+            <div class="question-text">Khi khách mời trả lời chưa đúng trọng tâm câu hỏi, em nên:</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Ngắt lời và yêu cầu trả lời lại.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Tỏ thái độ không hài lòng (lắc đầu, ngáp dài).</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Lắng nghe hết, có thể đặt lại câu hỏi theo cách khác ở cuối phần chia sẻ.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Đứng dậy bỏ về vì không hài lòng.</span>
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <div class="results" id="resultsContainer">
-        <div class="results-header">
-            <div class="results-title">KẾT QUẢ BÀI TRẮC NGHIỆM</div>
-            <div class="score" id="scoreDisplay">0/10</div>
-        </div>
-        
-        <div class="score-details">
-            Bạn đã trả lời đúng <strong id="correctCount">0</strong> trên tổng số <strong>20</strong> câu hỏi.
-        </div>
-        
-        <div class="feedback" id="feedback"></div>
-        
-        <div class="answer-key">
-            <h3>Đáp án đúng</h3>
-            <div class="answer-list" id="answerKey"></div>
+    <div class="answer-key">
+        <h3>Đáp án tham khảo:</h3>
+        <div class="answer-list">
+            <div class="answer-item">Câu 1: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 2: <span class="correct-option">C</span></div>
+            <div class="answer-item">Câu 3: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 4: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 5: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 6: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 7: <span class="correct-option">A</span></div>
+            <div class="answer-item">Câu 8: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 9: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 10: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 11: <span class="correct-option">A</span></div>
+            <div class="answer-item">Câu 12: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 13: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 14: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 15: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 16: <span class="correct-option">C</span></div>
+            <div class="answer-item">Câu 17: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 18: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 19: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 20: <span class="correct-option">C</span></div>
         </div>
     </div>
     
@@ -910,160 +674,5 @@
         <p>Trắc nghiệm "Giao lưu tìm hiểu nghề nghiệp" - Hoạt động trải nghiệm lớp 10 KNTT</p>
         <p>Chủ đề 9: Tìm hiểu nghề nghiệp - Sinh hoạt dưới cờ</p>
     </footer>
-
-    <script>
-        // Đáp án đúng
-        const correctAnswers = {
-            q1: "B",
-            q2: "C",
-            q3: "B",
-            q4: "B",
-            q5: "B",
-            q6: "B",
-            q7: "A",
-            q8: "B",
-            q9: "B",
-            q10: "B",
-            q11: "A",
-            q12: "B",
-            q13: "B",
-            q14: "B",
-            q15: "B",
-            q16: "C",
-            q17: "B",
-            q18: "B",
-            q19: "B",
-            q20: "C"
-        };
-        
-        // Hàm chấm điểm
-        function gradeQuiz() {
-            let score = 0;
-            let userAnswers = {};
-            const form = document.getElementById('quizForm');
-            const formData = new FormData(form);
-            
-            // Lấy tất cả các câu trả lời của người dùng
-            for (let i = 1; i <= 20; i++) {
-                const questionName = `q${i}`;
-                const userAnswer = formData.get(questionName);
-                userAnswers[questionName] = userAnswer;
-                
-                // Kiểm tra câu trả lời
-                if (userAnswer === correctAnswers[questionName]) {
-                    score += 0.5; // Mỗi câu đúng được 0.5 điểm
-                }
-            }
-            
-            // Hiển thị kết quả
-            displayResults(score, userAnswers);
-        }
-        
-        // Hiển thị kết quả
-        function displayResults(score, userAnswers) {
-            const resultsContainer = document.getElementById('resultsContainer');
-            const scoreDisplay = document.getElementById('scoreDisplay');
-            const correctCount = document.getElementById('correctCount');
-            const feedback = document.getElementById('feedback');
-            const answerKey = document.getElementById('answerKey');
-            
-            // Tính số câu đúng
-            const correctCountValue = Math.round(score * 2);
-            
-            // Hiển thị điểm
-            scoreDisplay.textContent = `${score.toFixed(1)}/10`;
-            correctCount.textContent = correctCountValue;
-            
-            // Hiển thị phản hồi
-            let feedbackText = '';
-            let feedbackClass = '';
-            
-            if (score >= 9) {
-                feedbackText = 'Xuất sắc! Bạn hiểu rất rõ về hoạt động giao lưu nghề nghiệp.';
-                feedbackClass = 'excellent';
-            } else if (score >= 7) {
-                feedbackText = 'Giỏi! Bạn có kiến thức tốt về chủ đề này.';
-                feedbackClass = 'good';
-            } else if (score >= 5) {
-                feedbackText = 'Khá! Bạn nắm được những nội dung cơ bản.';
-                feedbackClass = 'average';
-            } else {
-                feedbackText = 'Hãy ôn tập lại để hiểu rõ hơn về hoạt động giao lưu nghề nghiệp.';
-                feedbackClass = 'poor';
-            }
-            
-            feedback.textContent = feedbackText;
-            feedback.className = `feedback ${feedbackClass}`;
-            
-            // Hiển thị đáp án đúng
-            answerKey.innerHTML = '';
-            for (let i = 1; i <= 20; i++) {
-                const questionName = `q${i}`;
-                const userAnswer = userAnswers[questionName];
-                const correctAnswer = correctAnswers[questionName];
-                
-                const answerItem = document.createElement('div');
-                answerItem.className = 'answer-item';
-                answerItem.innerHTML = `<strong>Câu ${i}:</strong> Đáp án đúng là <span class="correct-option">${correctAnswer}</span>`;
-                
-                // Đánh dấu câu trả lời của người dùng
-                if (userAnswer) {
-                    if (userAnswer === correctAnswer) {
-                        answerItem.classList.add('correct-answer');
-                    } else {
-                        answerItem.classList.add('incorrect-answer');
-                        answerItem.innerHTML += ` (Bạn chọn: ${userAnswer})`;
-                    }
-                } else {
-                    answerItem.innerHTML += ` (Bạn chưa chọn đáp án)`;
-                }
-                
-                answerKey.appendChild(answerItem);
-            }
-            
-            // Hiển thị container kết quả
-            resultsContainer.style.display = 'block';
-            
-            // Cuộn đến kết quả
-            resultsContainer.scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        // Làm lại bài trắc nghiệm
-        function resetQuiz() {
-            // Xóa tất cả các lựa chọn
-            const allRadioButtons = document.querySelectorAll('input[type="radio"]');
-            allRadioButtons.forEach(radio => {
-                radio.checked = false;
-            });
-            
-            // Ẩn kết quả
-            document.getElementById('resultsContainer').style.display = 'none';
-            
-            // Cuộn lên đầu trang
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        
-        // Gán sự kiện cho nút nộp bài và làm lại
-        document.getElementById('submitBtn').addEventListener('click', gradeQuiz);
-        document.getElementById('resetBtn').addEventListener('click', resetQuiz);
-        
-        // Thêm hiệu ứng khi chọn đáp án
-        document.querySelectorAll('.option').forEach(option => {
-            option.addEventListener('click', function() {
-                // Bỏ chọn tất cả các option khác trong cùng một câu hỏi
-                const questionBox = this.closest('.question-box');
-                questionBox.querySelectorAll('.option').forEach(opt => {
-                    opt.classList.remove('selected');
-                });
-                
-                // Thêm lớp selected cho option được chọn
-                this.classList.add('selected');
-                
-                // Đánh dấu radio button được chọn
-                const radioInput = this.querySelector('input[type="radio"]');
-                radioInput.checked = true;
-            });
-        });
-    </script>
 </body>
 </html>
