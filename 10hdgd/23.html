@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc Nghiệm: Bảo vệ Môi trường Tự nhiên - TN&HN 11</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #2a7a4c;
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .instructions {
+            background-color: #e8f5e9;
+            border-left: 5px solid #2a7a4c;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .instructions h2 {
+            color: #2a7a4c;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 5px;
+        }
+        
+        .quiz-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .question-box {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: relative;
+            counter-increment: question-counter;
+        }
+        
+        .question-box::before {
+            content: "Câu " counter(question-counter) ":";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background-color: #2a7a4c;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1e4d2f;
+        }
+        
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .option {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px;
+            background-color: #f0f9f3;
+            border-radius: 5px;
+            border: 1px solid #c8e6c9;
+        }
+        
+        .option-label {
+            font-weight: 600;
+            color: #2a7a4c;
+            margin-right: 10px;
+            min-width: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .question-box {
+                padding: 15px 10px;
+            }
+            
+            .question-text {
+                font-size: 1rem;
+            }
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #c8e6c9;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .answer-key {
+            background-color: #f0f9f3;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .answer-key h3 {
+            color: #2a7a4c;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .answer-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px;
+        }
+        
+        .answer-item {
+            padding: 6px 10px;
+            background-color: white;
+            border-radius: 3px;
+            border-left: 4px solid #2a7a4c;
+            font-size: 0.9rem;
+        }
+        
+        .correct-option {
+            color: #2a7a4c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>TRẮC NGHIỆM: BẢO VỆ MÔI TRƯỜNG TỰ NHIÊN</h1>
+        <p>Trải nghiệm hướng nghiệp 11 - Chủ đề: Thực hiện các giải pháp bảo vệ môi trường tự nhiên</p>
+    </div>
+    
+    <div class="instructions">
+        <h2>Đề bài: 20 câu trắc nghiệm</h2>
+        <p>Chọn đáp án đúng nhất cho mỗi câu hỏi sau:</p>
+    </div>
+    
+    <div class="quiz-container">
+        <!-- Câu hỏi 1 -->
+        <div class="question-box">
+            <div class="question-text">Biện pháp nào sau đây KHÔNG phải là giải pháp bảo vệ môi trường tự nhiên?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Trồng cây gây rừng, phủ xanh đất trống đồi trọc.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Sử dụng túi nilon thay thế cho túi giấy.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Xây dựng hệ thống xử lý nước thải trước khi đổ ra môi trường.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Áp dụng mô hình sản xuất nông nghiệp hữu cơ.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 2 -->
+        <div class="question-box">
+            <div class="question-text">Hành động nào sau đây là thiết thực nhất để bảo vệ môi trường tự nhiên ở địa phương?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Chỉ tập trung vận động người thân trong gia đình.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Tham gia các chiến dịch thu gom rác thải, làm sạch bãi biển, công viên do địa phương tổ chức.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Đợi chính quyền địa phương có chính sách mới thực hiện.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Chỉ quan tâm đến môi trường trong khuôn viên nhà trường.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 3 -->
+        <div class="question-box">
+            <div class="question-text">Việc phân loại rác tại nguồn (rác hữu cơ, rác tái chế, rác thải khác) có tác dụng chính gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Tăng chi phí xử lý rác cho địa phương.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Giúp công nhân vệ sinh đỡ vất vả hơn.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Giảm lượng rác thải ra môi trường, tiết kiệm tài nguyên, giảm ô nhiễm.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Tạo thêm công ăn việc làm cho người thu gom ve chai.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 4 -->
+        <div class="question-box">
+            <div class="question-text">Giải pháp nào sau đây giúp bảo vệ nguồn nước tự nhiên ở địa phương?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Đổ dầu mỡ thừa trực tiếp xuống cống thoát nước.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Sử dụng thuốc trừ sâu, hóa chất vô tội vạ trong sản xuất nông nghiệp.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Xả rác thải sinh hoạt xuống sông, hồ.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Bảo vệ và trồng cây xanh quanh nguồn nước, không xả chất thải chưa xử lý vào nguồn nước.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 5 -->
+        <div class="question-box">
+            <div class="question-text">Khi phát hiện một cơ sở sản xuất xả nước thải chưa qua xử lý ra suối gần nhà, em nên làm gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Lờ đi vì không liên quan đến mình.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Báo cáo ngay cho chính quyền địa phương (UBND xã/phường, công an) hoặc đường dây nóng về môi trường.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Tự ý vào cơ sở đó để yêu cầu họ dừng lại.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Rủ bạn bè đến phản đối trước cổng cơ sở.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 6 -->
+        <div class="question-box">
+            <div class="question-text">"Sử dụng năng lượng tái tạo" (như năng lượng mặt trời, gió) là giải pháp bảo vệ môi trường vì:</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Giúp tiết kiệm tiền điện hơn cho người sử dụng.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Giảm sự phụ thuộc vào nhiên liệu hóa thạch, giảm phát thải khí gây hiệu ứng nhà kính.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Các thiết bị này trông rất hiện đại và đẹp mắt.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Đây là xu hướng mới trên thế giới.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 7 -->
+        <div class="question-box">
+            <div class="question-text">Hành động nào dưới đây thể hiện trách nhiệm bảo vệ môi trường tự nhiên của học sinh?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Vứt rác đúng nơi quy định, không xả rác bừa bãi.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Chỉ giữ vệ sinh trong lớp học, còn ngoài sân trường thì đã có lao công.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Sử dụng nước một cách lãng phí vì nghĩ rằng nước không bao giờ cạn.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Đốt rác thải trong vườn để tiết kiệm công đổ rác.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 8 -->
+        <div class="question-box">
+            <div class="question-text">Việc bảo tồn đa dạng sinh học (bảo vệ các loài động, thực vật) có ý nghĩa gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Duy trì sự cân bằng sinh thái, đảm bảo nguồn gen quý cho tương lai.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Chỉ để phục vụ nhu cầu tham quan, du lịch.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Giúp con người có nhiều thực phẩm hơn để khai thác.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Làm cho môi trường trở nên phức tạp hơn.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 9 -->
+        <div class="question-box">
+            <div class="question-text">Giải pháp "3R" (Reduce - Reuse - Recycle) trong bảo vệ môi trường có nghĩa là gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Rác thải - Rò rỉ - Rửa sạch.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Giảm thiểu - Tái sử dụng - Tái chế.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Rẻ - Rắc rối - Rộng rãi.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Rõ ràng - Rành mạch - Rực rỡ.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 10 -->
+        <div class="question-box">
+            <div class="question-text">Để bảo vệ môi trường không khí ở địa phương, chúng ta cần:</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Khuyến khích sử dụng phương tiện giao thông công cộng, hạn chế phương tiện cá nhân.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Đốt rơm rạ, rác thải nông nghiệp sau mỗi vụ thu hoạch.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Mở thêm nhiều nhà máy, xí nghiệp mà không quan tâm đến hệ thống xử lý khí thải.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Chặt bỏ cây xanh để mở rộng đường giao thông.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 11 -->
+        <div class="question-box">
+            <div class="question-text">Khu bảo tồn thiên nhiên, vườn quốc gia có vai trò chủ yếu gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Là nơi giải trí, cắm trại cho người dân.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Bảo vệ các hệ sinh thái tự nhiên quan trọng, các loài động thực vật quý hiếm.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Khai thác du lịch để tạo nguồn thu lớn.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Là đất dự trữ để xây dựng các khu đô thị trong tương lai.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 12 -->
+        <div class="question-box">
+            <div class="question-text">Hành động nào sau đây là tái sử dụng (Reuse) đồ vật?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Vứt chai nhựa đã dùng vào thùng rác.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Dùng vỏ chai nhựa cũ để trồng cây cảnh hoặc làm đồ chứa.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Mang chai nhựa đến nhà máy để nghiền nóng và tạo thành hạt nhựa mới.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Giảm mua đồ uống đóng chai.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 13 -->
+        <div class="question-box">
+            <div class="question-text">Ô nhiễm trắng là thuật ngữ chỉ ô nhiễm do:</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Khói bụi từ các nhà máy.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Rác thải nhựa, túi nilon khó phân hủy.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Nước thải sinh hoạt.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Tiếng ồn từ các phương tiện giao thông.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 14 -->
+        <div class="question-box">
+            <div class="question-text">Để hạn chế "ô nhiễm trắng", giải pháp cá nhân hiệu quả nhất là:</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Sử dụng túi nilon thường xuyên vì tiện lợi.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Mang theo túi vải, túi giấy khi đi mua sắm; sử dụng chai thủy tinh đựng nước.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Vứt túi nilon ra môi trường vì chúng sẽ tự phân hủy.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Chỉ sử dụng các sản phẩm nhựa dùng một lần.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 15 -->
+        <div class="question-box">
+            <div class="question-text">Việc tham gia trồng và chăm sóc cây xanh ở trường học, khu dân cư có tác dụng gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Chỉ làm đẹp cảnh quan.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Giúp thanh lọc không khí, tạo bóng mát, chống xói mòn đất và nâng cao ý thức bảo vệ môi trường.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Tốn thời gian và công sức.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Thu hút côn trùng gây hại.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 16 -->
+        <div class="question-box">
+            <div class="question-text">Nguyên nhân chính dẫn đến tình trạng biến đổi khí hậu toàn cầu là do:</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Con người phát thải quá nhiều khí CO2 và các khí nhà kính khác từ hoạt động đốt nhiên liệu hóa thạch, phá rừng.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Do sự thay đổi tự nhiên của Trái Đất.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Do ảnh hưởng từ mặt trăng.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Do các hoạt động nghiên cứu khoa học.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 17 -->
+        <div class="question-box">
+            <div class="question-text">Hành động nào sau đây góp phần giảm thiểu biến đổi khí hậu?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Sử dụng điều hòa nhiệt độ ở mức quá thấp (dưới 20 độ C).</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Tắt các thiết bị điện khi không sử dụng, sử dụng bóng đèn tiết kiệm điện.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Sử dụng xe máy cho mọi quãng đường dù rất gần.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Lãng phí nước sạch trong sinh hoạt.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 18 -->
+        <div class="question-box">
+            <div class="question-text">Kế hoạch nhỏ "Thu gom giấy vụn, vỏ chai nhựa" trong trường học chủ yếu nhằm mục đích gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Gây quỹ cho lớp.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Rèn luyện ý thức tiết kiệm và bảo vệ môi trường thông qua hành động tái chế.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Dọn dẹp cho trường học sạch sẽ.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Tạo phong trào thi đua giữa các lớp.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 19 -->
+        <div class="question-box">
+            <div class="question-text">Khi thấy một khu rừng phòng hộ đầu nguồn ở địa phương đang bị lâm tặc chặt phá, trách nhiệm của công dân là:</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Báo ngay cho cơ quan chức năng (kiểm lâm, chính quyền địa phương).</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Tự mình vào rừng ngăn cản vì sợ họ chặt hết cây.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Mặc kệ vì đó là việc của kiểm lâm.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Tham gia khai thác gỗ để không bị thiệt.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Câu hỏi 20 -->
+        <div class="question-box">
+            <div class="question-text">Thông điệp "Hãy nói không với sản phẩm từ động vật hoang dã" nhằm mục đích gì?</div>
+            <div class="options">
+                <div class="option">
+                    <span class="option-label">A.</span>
+                    <span>Bảo vệ sức khỏe con người khỏi các bệnh lạ.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">B.</span>
+                    <span>Giảm nhu cầu tiêu thụ, từ đó giảm thiểu nạn săn bắt, buôn bán trái phép, bảo vệ các loài động vật quý hiếm.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">C.</span>
+                    <span>Tiết kiệm tiền bạc cho người tiêu dùng.</span>
+                </div>
+                <div class="option">
+                    <span class="option-label">D.</span>
+                    <span>Khuyến khích chăn nuôi gia súc, gia cầm.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="answer-key">
+        <h3>Đáp án tham khảo:</h3>
+        <div class="answer-list">
+            <div class="answer-item">Câu 1: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 2: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 3: <span class="correct-option">C</span></div>
+            <div class="answer-item">Câu 4: <span class="correct-option">D</span></div>
+            <div class="answer-item">Câu 5: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 6: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 7: <span class="correct-option">A</span></div>
+            <div class="answer-item">Câu 8: <span class="correct-option">A</span></div>
+            <div class="answer-item">Câu 9: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 10: <span class="correct-option">A</span></div>
+            <div class="answer-item">Câu 11: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 12: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 13: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 14: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 15: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 16: <span class="correct-option">A</span></div>
+            <div class="answer-item">Câu 17: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 18: <span class="correct-option">B</span></div>
+            <div class="answer-item">Câu 19: <span class="correct-option">A</span></div>
+            <div class="answer-item">Câu 20: <span class="correct-option">B</span></div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Trắc nghiệm "Bảo vệ môi trường tự nhiên" - Trải nghiệm hướng nghiệp lớp 11</p>
+        <p>Chủ đề: Thực hiện các giải pháp bảo vệ môi trường tự nhiên và ở địa phương</p>
+    </footer>
+</body>
+</html>
