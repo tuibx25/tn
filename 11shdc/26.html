@@ -3,565 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHDC 11 - Sự phát triển các nhóm nghề trong xã hội hiện đại</title>
+    <title>Trắc nghiệm: Sự phát triển các nhóm nghề</title>
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
         
         body {
-            background-color: #f0f7ff;
+            background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
+            margin: 0;
             padding: 20px;
         }
         
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 30px;
         }
         
-        header {
+        .header {
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 3px solid #4a6fa5;
+            border-bottom: 2px solid #e0e6ef;
         }
         
-        h1 {
+        .header h1 {
             color: #2c3e50;
             margin-bottom: 10px;
-            font-size: 28px;
         }
         
-        .subtitle {
-            color: #4a6fa5;
-            font-size: 18px;
-            font-weight: 500;
+        .header .subject {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2em;
         }
         
-        .info-box {
-            background-color: #e8f4ff;
-            border-left: 5px solid #4a6fa5;
-            padding: 15px;
-            margin-bottom: 25px;
-            border-radius: 0 8px 8px 0;
+        .header .topic {
+            background-color: #e8f4fc;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
         }
         
         .question {
             background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 20px;
+            border-left: 4px solid #3498db;
             margin-bottom: 25px;
-            transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
-        }
-        
-        .question:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            border-radius: 0 5px 5px 0;
         }
         
         .question-number {
-            display: inline-block;
-            background-color: #4a6fa5;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .question-number span {
+            background-color: #3498db;
             color: white;
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 10px;
-            font-weight: bold;
         }
         
         .question-text {
-            font-weight: 600;
             margin-bottom: 15px;
-            font-size: 18px;
-            color: #2c3e50;
+            font-weight: bold;
         }
         
         .options {
-            margin-left: 40px;
+            margin-left: 15px;
         }
         
         .option {
-            margin-bottom: 10px;
-            padding: 8px 0;
-        }
-        
-        .option label {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            padding: 8px 12px;
-            border-radius: 6px;
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
             transition: background-color 0.2s;
         }
         
-        .option label:hover {
-            background-color: #edf5ff;
+        .option:hover {
+            background-color: #f0f0f0;
         }
         
-        .option input {
-            margin-right: 12px;
-            transform: scale(1.2);
-        }
-        
-        .result {
-            display: none;
-            background-color: #f0fff0;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 15px;
-            border-left: 5px solid #2ecc71;
-        }
-        
-        .correct-answer {
-            color: #27ae60;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-        
-        .explanation {
-            margin-top: 10px;
-            font-style: italic;
-            color: #555;
-        }
-        
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        button {
-            padding: 14px 30px;
-            background-color: #4a6fa5;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        button:hover {
-            background-color: #3a5a80;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(58, 90, 128, 0.2);
-        }
-        
-        #resetBtn {
-            background-color: #95a5a6;
-        }
-        
-        #resetBtn:hover {
-            background-color: #7f8c8d;
-        }
-        
-        .score-container {
+        .footer {
             text-align: center;
             margin-top: 30px;
-            padding: 20px;
-            background-color: #e8f4ff;
-            border-radius: 10px;
-            display: none;
-        }
-        
-        .score {
-            font-size: 32px;
-            font-weight: bold;
-            color: #4a6fa5;
-            margin: 10px 0;
-        }
-        
-        .score-text {
-            font-size: 18px;
-            color: #2c3e50;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #7f8c8d;
-            font-size: 14px;
             padding-top: 20px;
             border-top: 1px solid #eee;
+            color: #7f8c8d;
+            font-size: 0.9em;
         }
         
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 15px;
             }
             
-            h1 {
-                font-size: 24px;
-            }
-            
-            .question-text {
-                font-size: 16px;
-            }
-            
-            .options {
-                margin-left: 20px;
-            }
-            
-            .buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            button {
-                width: 100%;
+            .question {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="header">
             <h1>SINH HOẠT DƯỚI CỜ LỚP 11</h1>
-            <div class="subtitle">TÌM HIỂU SỰ PHÁT TRIỂN CỦA CÁC NHÓM NGHỀ TRONG XÃ HỘI HIỆN ĐẠI</div>
-        </header>
-        
-        <div class="info-box">
-            <p><strong>Hướng dẫn:</strong> Chọn đáp án đúng nhất cho mỗi câu hỏi. Sau khi hoàn thành tất cả câu hỏi, nhấn nút "NỘP BÀI" để xem kết quả và giải thích đáp án.</p>
+            <div class="subject">Tìm hiểu sự phát triển của các nhóm nghề trong xã hội hiện đại</div>
+            <div class="topic">Chủ đề: Xu hướng phát triển nghề nghiệp trong kỷ nguyên số</div>
         </div>
         
-        <form id="quizForm">
-            <!-- Các câu hỏi sẽ được thêm bằng JavaScript -->
-        </form>
-        
-        <div class="buttons">
-            <button type="button" id="submitBtn">NỘP BÀI</button>
-            <button type="button" id="resetBtn">LÀM LẠI</button>
+        <div class="question">
+            <div class="question-number"><span>1</span> Câu 1</div>
+            <div class="question-text">Yếu tố nào sau đây là TÁC ĐỘNG LỚN NHẤT tạo nên sự thay đổi về cơ cấu và tính chất nhóm nghề trong xã hội hiện đại?</div>
+            <div class="options">
+                <div class="option">A. Toàn cầu hóa.</div>
+                <div class="option">B. Sự phát triển bùng nổ của khoa học, công nghệ và chuyển đổi số.</div>
+                <div class="option">C. Thay đổi nhân khẩu học.</div>
+                <div class="option">D. Biến đổi khí hậu.</div>
+            </div>
         </div>
         
-        <div class="score-container" id="scoreContainer">
-            <div class="score-text">ĐIỂM CỦA BẠN:</div>
-            <div class="score" id="score">0/15</div>
-            <div id="scoreMessage"></div>
+        <div class="question">
+            <div class="question-number"><span>2</span> Câu 2</div>
+            <div class="question-text">Nhóm nghề nào dưới đây được dự báo là sẽ PHÁT TRIỂN MẠNH MẼ NHẤT trong kỷ nguyên số?</div>
+            <div class="options">
+                <div class="option">A. Nghề thủ công truyền thống.</div>
+                <div class="option">B. Nhóm nghề STEM (Khoa học, Công nghệ, Kỹ thuật, Toán học) và Công nghệ thông tin.</div>
+                <div class="option">C. Nghề trong lĩnh vực khai thác tài nguyên.</div>
+                <div class="option">D. Nghề hành chính văn phòng giấy tờ thủ công.</div>
+            </div>
         </div>
         
-        <footer>
-            <p>Môn SHDC - Sinh hoạt dưới cờ lớp 11 | Chủ đề: Sự phát triển của các nhóm nghề trong xã hội hiện đại</p>
-        </footer>
+        <div class="question">
+            <div class="question-number"><span>3</span> Câu 3</div>
+            <div class="question-text">Xu hướng 'Làm việc tự do' (Freelance) và 'Kinh tế gig' (Gig Economy) phát triển mạnh chủ yếu nhờ vào điều gì?</div>
+            <div class="options">
+                <div class="option">A. Luật lao động ngày càng chặt chẽ.</div>
+                <div class="option">B. Mong muốn có công việc ổn định suốt đời.</div>
+                <div class="option">C. Sự phổ biến của nền tảng kết nối trực tuyến và công nghệ.</div>
+                <div class="option">D. Sự suy giảm của các doanh nghiệps startup.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>4</span> Câu 4</div>
+            <div class="question-text">Kỹ năng nào sau đây được coi là quan trọng HÀNG ĐẦU để thích ứng với sự thay đổi nhanh chóng của các nhóm nghề?</div>
+            <div class="options">
+                <div class="option">A. Kỹ năng chuyên môn cứng một lĩnh vực duy nhất.</div>
+                <div class="option">B. Khả năng học tập suốt đời và thích nghi.</div>
+                <div class="option">C. Thành thạo một ngoại ngữ.</div>
+                <div class="option">D. Kinh nghiệm làm việc lâu năm.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>5</span> Câu 5</div>
+            <div class="question-text">Tác động tiêu cực nào có thể xảy ra từ sự phát triển của Trí tuệ nhân tạo (AI) và Tự động hóa?</div>
+            <div class="options">
+                <div class="option">A. Tăng năng suất lao động.</div>
+                <div class="option">B. Tạo ra nhiều sản phẩm, dịch vụ mới.</div>
+                <div class="option">C. Nguy cơ thay thế một số công việc lặp đi lặp lại, có tính quy trình cao.</div>
+                <div class="option">D. Cải thiện điều kiện làm việc.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>6</span> Câu 6</div>
+            <div class="question-text">Nhóm nghề liên quan đến 'Kinh tế xanh' và 'Phát triển bền vững' đang tăng trưởng vì lý do chính nào?</div>
+            <div class="options">
+                <div class="option">A. Nhu cầu giải trí tăng cao.</div>
+                <div class="option">B. Nhận thức về bảo vệ môi trường và ứng phó biến đổi khí hậu.</div>
+                <div class="option">C. Xu hướng thời trang nhanh.</div>
+                <div class="option">D. Sự phát triển của ngành công nghiệp khai thác than.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>7</span> Câu 7</div>
+            <div class="question-text">Trong xã hội hiện đại, ranh giới giữa các ngành nghề đang trở nên như thế nào?</div>
+            <div class="options">
+                <div class="option">A. Rõ ràng và tách biệt hơn.</div>
+                <div class="option">B. Ngày càng mờ nhạt, đòi hỏi kiến thức và kỹ năng liên ngành.</div>
+                <div class="option">C. Không thay đổi.</div>
+                <div class="option">D. Chỉ dành cho lao động có trình độ thấp.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>8</span> Câu 8</div>
+            <div class="question-text">Đâu là một đặc điểm của các nghề 'lên ngôi' trong xã hội hiện đại?</div>
+            <div class="options">
+                <div class="option">A. Công việc ổn định, ít thay đổi trong nhiều thập kỷ.</div>
+                <div class="option">B. Gắn liền với sáng tạo, đổi mới và giải quyết vấn đề phức tạp.</div>
+                <div class="option">C. Chủ yếu dựa vào sức lao động chân tay.</div>
+                <div class="option">D. Không yêu cầu sử dụng công nghệ.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>9</span> Câu 9</div>
+            <div class="question-text">Ngành nào sau đây là ví dụ điển hình cho sự phát triển của nhóm nghề dựa trên nền tảng số và dữ liệu?</div>
+            <div class="options">
+                <div class="option">A. Nông nghiệp thuần túy.</div>
+                <div class="option">B. Phân tích dữ liệu lớn (Big Data), Marketing số.</div>
+                <div class="option">C. Sản xuất hàng loạt theo dây chuyền cũ.</div>
+                <div class="option">D. Kế toán thủ công.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>10</span> Câu 10</div>
+            <div class="question-text">Yếu tố nào giúp một người lao động có thể chuyển đổi giữa các nhóm nghề khác nhau trong tương lai?</div>
+            <div class="options">
+                <div class="option">A. Bằng cấp chính quy duy nhất khi ra trường.</div>
+                <div class="option">B. Bộ kỹ năng linh hoạt, có khả năng tái đào tạo và mạng lưới quan hệ.</div>
+                <div class="option">C. Tuổi tác trẻ trung.</div>
+                <div class="option">D. Chỉ làm việc cho một công ty suốt đời.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>11</span> Câu 11</div>
+            <div class="question-text">Cụm từ 'Cách mạng Công nghiệp 4.0' liên quan mật thiết nhất đến sự phát triển của nhóm nghề nào?</div>
+            <div class="options">
+                <div class="option">A. Nghề nông nghiệp thủ công.</div>
+                <div class="option">B. Nhóm nghề về Internet vạn vật (IoT), robot, in 3D, thực tế ảo (VR/AR).</div>
+                <div class="option">C. Nghề buôn bán trao đổi hàng hóa nhỏ lẻ.</div>
+                <div class="option">D. Nghề khai thác thủy sản truyền thống.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>12</span> Câu 12</div>
+            <div class="question-text">Trong bối cảnh hiện đại, nhu cầu về nhóm nghề trong lĩnh vực nào sau đây vẫn luôn ổn định và có xu hướng tăng?</div>
+            <div class="options">
+                <div class="option">A. Sản xuất phim điện ảnh.</div>
+                <div class="option">B. Chăm sóc sức khỏe và an sinh xã hội (do già hóa dân số).</div>
+                <div class="option">C. Sản xuất than đá.</div>
+                <div class="option">D. Sửa chữa máy đánh chữ.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>13</span> Câu 13</div>
+            <div class="question-text">Để chuẩn bị cho thị trường lao động tương lai, học sinh THPT nên tập trung vào việc gì?</div>
+            <div class="options">
+                <div class="option">A. Chỉ học thật tốt các môn tự nhiên.</div>
+                <div class="option">B. Xác định sớm một nghề duy nhất và không thay đổi.</div>
+                <div class="option">C. Rèn luyện kỹ năng mềm (giao tiếp, hợp tác, tư duy phản biện) song song với kiến thức chuyên môn và khả năng sử dụng công nghệ.</div>
+                <div class="option">D. Chờ đến khi tốt nghiệp đại học mới bắt đầu tìm hiểu về nghề nghiệp.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>14</span> Câu 14</div>
+            <div class="question-text">Hiện tượng 'Làm việc từ xa' (Remote Work) trở nên phổ biến đã làm thay đổi đặc điểm nào của nhiều nhóm nghề?</div>
+            <div class="options">
+                <div class="option">A. Địa điểm làm việc trở nên linh hoạt, không bó buộc về mặt không gian.</div>
+                <div class="option">B. Giờ làm việc cố định bắt buộc hơn.</div>
+                <div class="option">C. Giảm nhu cầu sử dụng công nghệ thông tin.</div>
+                <div class="option">D. Tăng cường các cuộc họp trực tiếp mỗi ngày.</div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>15</span> Câu 15</div>
+            <div class="question-text">Mục đích chính của việc tìm hiểu sự phát triển các nhóm nghề trong xã hội hiện đại đối với học sinh là gì?</div>
+            <div class="options">
+                <div class="option">A. Để biết và ghi nhớ tên tất cả các nghề.</div>
+                <div class="option">B. Để có cái nhìn động, mở về tương lai nghề nghiệp, từ đó chủ động định hướng, lập kế hoạch học tập và rèn luyện phù hợp.</div>
+                <div class="option">C. Để so sánh nghề nào sang trọng hơn.</div>
+                <div class="option">D. Để quyết định ngừng học vì nhiều nghề sẽ bị máy móc thay thế.</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Sinh hoạt dưới cờ lớp 11 - Tìm hiểu sự phát triển của các nhóm nghề trong xã hội hiện đại</p>
+            <p>Chủ đề: Xu hướng phát triển nghề nghiệp trong kỷ nguyên số</p>
+        </div>
     </div>
-
-    <script>
-        // Dữ liệu câu hỏi
-        const quizData = [
-            {
-                question: "Yếu tố nào sau đây là TÁC ĐỘNG LỚN NHẤT tạo nên sự thay đổi về cơ cấu và tính chất nhóm nghề trong xã hội hiện đại?",
-                options: [
-                    "Toàn cầu hóa.",
-                    "Sự phát triển bùng nổ của khoa học, công nghệ và chuyển đổi số.",
-                    "Thay đổi nhân khẩu học.",
-                    "Biến đổi khí hậu."
-                ],
-                correct: 1,
-                explanation: "Công nghệ là động lực chính làm biến đổi sâu sắc mọi ngành nghề."
-            },
-            {
-                question: "Nhóm nghề nào dưới đây được dự báo là sẽ PHÁT TRIỂN MẠNH MẼ NHẤT trong kỷ nguyên số?",
-                options: [
-                    "Nghề thủ công truyền thống.",
-                    "Nhóm nghề STEM (Khoa học, Công nghệ, Kỹ thuật, Toán học) và Công nghệ thông tin.",
-                    "Nghề trong lĩnh vực khai thác tài nguyên.",
-                    "Nghề hành chính văn phòng giấy tờ thủ công."
-                ],
-                correct: 1,
-                explanation: "Nhóm STEM và CNTT là cốt lõi của chuyển đổi số, có nhu cầu nhân lực rất lớn."
-            },
-            {
-                question: "Xu hướng 'Làm việc tự do' (Freelance) và 'Kinh tế gig' (Gig Economy) phát triển mạnh chủ yếu nhờ vào điều gì?",
-                options: [
-                    "Luật lao động ngày càng chặt chẽ.",
-                    "Mong muốn có công việc ổn định suốt đời.",
-                    "Sự phổ biến của nền tảng kết nối trực tuyến và công nghệ.",
-                    "Sự suy giảm của các doanh nghiệp startup."
-                ],
-                correct: 2,
-                explanation: "Các nền tảng số (App, website) giúp kết nối người cung cấp dịch vụ và khách hàng một cách dễ dàng."
-            },
-            {
-                question: "Kỹ năng nào sau đây được coi là quan trọng HÀNG ĐẦU để thích ứng với sự thay đổi nhanh chóng của các nhóm nghề?",
-                options: [
-                    "Kỹ năng chuyên môn cứng một lĩnh vực duy nhất.",
-                    "Khả năng học tập suốt đời và thích nghi.",
-                    "Thành thạo một ngoại ngữ.",
-                    "Kinh nghiệm làm việc lâu năm."
-                ],
-                correct: 1,
-                explanation: "Trong thế giới thay đổi nhanh, khả năng học hỏi và thích nghi quan trọng hơn một bộ kỹ năng cố định."
-            },
-            {
-                question: "Tác động tiêu cực nào có thể xảy ra từ sự phát triển của Trí tuệ nhân tạo (AI) và Tự động hóa?",
-                options: [
-                    "Tăng năng suất lao động.",
-                    "Tạo ra nhiều sản phẩm, dịch vụ mới.",
-                    "Nguy cơ thay thế một số công việc lặp đi lặp lại, có tính quy trình cao.",
-                    "Cải thiện điều kiện làm việc."
-                ],
-                correct: 2,
-                explanation: "AI và tự động hóa có thể thay thế các công việc mang tính thường xuyên, ít sáng tạo."
-            },
-            {
-                question: "Nhóm nghề liên quan đến 'Kinh tế xanh' và 'Phát triển bền vững' đang tăng trưởng vì lý do chính nào?",
-                options: [
-                    "Nhu cầu giải trí tăng cao.",
-                    "Nhận thức về bảo vệ môi trường và ứng phó biến đổi khí hậu.",
-                    "Xu hướng thời trang nhanh.",
-                    "Sự phát triển của ngành công nghiệp khai thác than."
-                ],
-                correct: 1,
-                explanation: "Các vấn đề môi trường cấp thiết đang thúc đẩy sự ra đời và phát triển của các nghề xanh."
-            },
-            {
-                question: "Trong xã hội hiện đại, ranh giới giữa các ngành nghề đang trở nên như thế nào?",
-                options: [
-                    "Rõ ràng và tách biệt hơn.",
-                    "Ngày càng mờ nhạt, đòi hỏi kiến thức và kỹ năng liên ngành.",
-                    "Không thay đổi.",
-                    "Chỉ dành cho lao động có trình độ thấp."
-                ],
-                correct: 1,
-                explanation: "Các vấn đề phức tạp cần giải pháp tích hợp từ nhiều lĩnh vực, dẫn đến sự giao thoa nghề nghiệp."
-            },
-            {
-                question: "Đâu là một đặc điểm của các nghề 'lên ngôi' trong xã hội hiện đại?",
-                options: [
-                    "Công việc ổn định, ít thay đổi trong nhiều thập kỷ.",
-                    "Gắn liền với sáng tạo, đổi mới và giải quyết vấn đề phức tạp.",
-                    "Chủ yếu dựa vào sức lao động chân tay.",
-                    "Không yêu cầu sử dụng công nghệ."
-                ],
-                correct: 1,
-                explanation: "Các nghề mới thường đòi hỏi tư duy sáng tạo và giải quyết những vấn đề không có khuôn mẫu sẵn."
-            },
-            {
-                question: "Ngành nào sau đây là ví dụ điển hình cho sự phát triển của nhóm nghề dựa trên nền tảng số và dữ liệu?",
-                options: [
-                    "Nông nghiệp thuần túy.",
-                    "Phân tích dữ liệu lớn (Big Data), Marketing số.",
-                    "Sản xuất hàng loạt theo dây chuyền cũ.",
-                    "Kế toán thủ công."
-                ],
-                correct: 1,
-                explanation: "Dữ liệu trở thành 'tài nguyên mới', kéo theo nhu cầu về các nghề phân tích, xử lý và khai thác dữ liệu."
-            },
-            {
-                question: "Yếu tố nào giúp một người lao động có thể chuyển đổi giữa các nhóm nghề khác nhau trong tương lai?",
-                options: [
-                    "Bằng cấp chính quy duy nhất khi ra trường.",
-                    "Bộ kỹ năng linh hoạt, có khả năng tái đào tạo và mạng lưới quan hệ.",
-                    "Tuổi tác trẻ trung.",
-                    "Chỉ làm việc cho một công ty suốt đời."
-                ],
-                correct: 1,
-                explanation: "Kỹ năng linh hoạt và khả năng học lại là 'vốn' để chuyển đổi nghề nghiệp."
-            },
-            {
-                question: "Cụm từ 'Cách mạng Công nghiệp 4.0' liên quan mật thiết nhất đến sự phát triển của nhóm nghề nào?",
-                options: [
-                    "Nghề nông nghiệp thủ công.",
-                    "Nhóm nghề về Internet vạn vật (IoT), robot, in 3D, thực tế ảo (VR/AR).",
-                    "Nghề buôn bán trao đổi hàng hóa nhỏ lẻ.",
-                    "Nghề khai thác thủy sản truyền thống."
-                ],
-                correct: 1,
-                explanation: "CMCN 4.0 xoay quanh các công nghệ số, vật lý và sinh học, tạo ra nhóm nghề hoàn toàn mới."
-            },
-            {
-                question: "Trong bối cảnh hiện đại, nhu cầu về nhóm nghề trong lĩnh vực nào sau đây vẫn luôn ổn định và có xu hướng tăng?",
-                options: [
-                    "Sản xuất phim điện ảnh.",
-                    "Chăm sóc sức khỏe và an sinh xã hội (do già hóa dân số).",
-                    "Sản xuất than đá.",
-                    "Sửa chữa máy đánh chữ."
-                ],
-                correct: 1,
-                explanation: "Dân số già hóa là xu hướng toàn cầu, làm tăng nhu cầu chăm sóc sức khỏe và phúc lợi."
-            },
-            {
-                question: "Để chuẩn bị cho thị trường lao động tương lai, học sinh THPT nên tập trung vào việc gì?",
-                options: [
-                    "Chỉ học thật tốt các môn tự nhiên.",
-                    "Xác định sớm một nghề duy nhất và không thay đổi.",
-                    "Rèn luyện kỹ năng mềm (giao tiếp, hợp tác, tư duy phản biện) song song với kiến thức chuyên môn và khả năng sử dụng công nghệ.",
-                    "Chờ đến khi tốt nghiệp đại học mới bắt đầu tìm hiểu về nghề nghiệp."
-                ],
-                correct: 2,
-                explanation: "Sự kết hợp giữa kỹ năng thế kỷ 21, kiến thức nền tảng và công nghệ là công thức chuẩn bị tốt nhất."
-            },
-            {
-                question: "Hiện tượng 'Làm việc từ xa' (Remote Work) trở nên phổ biến đã làm thay đổi đặc điểm nào của nhiều nhóm nghề?",
-                options: [
-                    "Địa điểm làm việc trở nên linh hoạt, không bó buộc về mặt không gian.",
-                    "Giờ làm việc cố định bắt buộc hơn.",
-                    "Giảm nhu cầu sử dụng công nghệ thông tin.",
-                    "Tăng cường các cuộc họp trực tiếp mỗi ngày."
-                ],
-                correct: 0,
-                explanation: "Công nghệ cho phép nhiều công việc được thực hiện từ bất kỳ đâu có kết nối Internet."
-            },
-            {
-                question: "Mục đích chính của việc tìm hiểu sự phát triển các nhóm nghề trong xã hội hiện đại đối với học sinh là gì?",
-                options: [
-                    "Để biết và ghi nhớ tên tất cả các nghề.",
-                    "Để có cái nhìn động, mở về tương lai nghề nghiệp, từ đó chủ động định hướng, lập kế hoạch học tập và rèn luyện phù hợp.",
-                    "Để so sánh nghề nào sang trọng hơn.",
-                    "Để quyết định ngừng học vì nhiều nghề sẽ bị máy móc thay thế."
-                ],
-                correct: 1,
-                explanation: "Mục đích quan trọng nhất là giúp học sinh chủ động định hướng tương lai của bản thân."
-            }
-        ];
-
-        // Tạo các câu hỏi trong form
-        const quizForm = document.getElementById('quizForm');
-        
-        quizData.forEach((item, index) => {
-            const questionDiv = document.createElement('div');
-            questionDiv.className = 'question';
-            questionDiv.id = `question-${index}`;
-            
-            let optionsHTML = '';
-            item.options.forEach((option, optIndex) => {
-                const optionLetter = String.fromCharCode(65 + optIndex); // A, B, C, D
-                optionsHTML += `
-                    <div class="option">
-                        <label>
-                            <input type="radio" name="question${index}" value="${optIndex}" required>
-                            <span><strong>${optionLetter}.</strong> ${option}</span>
-                        </label>
-                    </div>
-                `;
-            });
-            
-            questionDiv.innerHTML = `
-                <div class="question-header">
-                    <span class="question-number">${index + 1}</span>
-                    <span class="question-text">${item.question}</span>
-                </div>
-                <div class="options">
-                    ${optionsHTML}
-                </div>
-                <div class="result" id="result-${index}">
-                    <div class="correct-answer">Đáp án đúng: ${String.fromCharCode(65 + item.correct)}</div>
-                    <div class="explanation"><strong>Giải thích:</strong> ${item.explanation}</div>
-                </div>
-            `;
-            
-            quizForm.appendChild(questionDiv);
-        });
-
-        // Xử lý nộp bài
-        document.getElementById('submitBtn').addEventListener('click', function() {
-            let score = 0;
-            const totalQuestions = quizData.length;
-            
-            // Kiểm tra xem tất cả câu hỏi đã được trả lời chưa
-            let allAnswered = true;
-            for (let i = 0; i < totalQuestions; i++) {
-                const selectedOption = document.querySelector(`input[name="question${i}"]:checked`);
-                if (!selectedOption) {
-                    allAnswered = false;
-                    break;
-                }
-            }
-            
-            if (!allAnswered) {
-                alert('Vui lòng trả lời tất cả các câu hỏi trước khi nộp bài!');
-                return;
-            }
-            
-            // Tính điểm và hiển thị kết quả
-            for (let i = 0; i < totalQuestions; i++) {
-                const selectedOption = document.querySelector(`input[name="question${i}"]:checked`);
-                const userAnswer = parseInt(selectedOption.value);
-                const correctAnswer = quizData[i].correct;
-                
-                // Hiển thị kết quả cho từng câu
-                document.getElementById(`result-${i}`).style.display = 'block';
-                
-                // Đánh dấu câu trả lời đúng/sai
-                const questionDiv = document.getElementById(`question-${i}`);
-                if (userAnswer === correctAnswer) {
-                    score++;
-                    questionDiv.style.borderLeft = '5px solid #2ecc71';
-                } else {
-                    questionDiv.style.borderLeft = '5px solid #e74c3c';
-                }
-            }
-            
-            // Hiển thị điểm
-            const scoreContainer = document.getElementById('scoreContainer');
-            const scoreElement = document.getElementById('score');
-            const scoreMessage = document.getElementById('scoreMessage');
-            
-            scoreElement.textContent = `${score}/${totalQuestions}`;
-            scoreContainer.style.display = 'block';
-            
-            // Thông báo dựa trên điểm số
-            let message = '';
-            if (score === totalQuestions) {
-                message = 'Xuất sắc! Bạn có hiểu biết rất tốt về sự phát triển nghề nghiệp hiện đại.';
-                scoreElement.style.color = '#27ae60';
-            } else if (score >= totalQuestions * 0.7) {
-                message = 'Khá tốt! Bạn nắm được những kiến thức cơ bản về chủ đề này.';
-                scoreElement.style.color = '#3498db';
-            } else if (score >= totalQuestions * 0.5) {
-                message = 'Cố gắng hơn nữa! Bạn cần tìm hiểu thêm về các xu hướng nghề nghiệp hiện đại.';
-                scoreElement.style.color = '#f39c12';
-            } else {
-                message = 'Hãy xem lại các câu hỏi và giải thích để hiểu rõ hơn về chủ đề này.';
-                scoreElement.style.color = '#e74c3c';
-            }
-            
-            scoreMessage.textContent = message;
-            
-            // Cuộn đến kết quả
-            scoreContainer.scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // Xử lý nút làm lại
-        document.getElementById('resetBtn').addEventListener('click', function() {
-            // Xóa tất cả lựa chọn
-            const allInputs = document.querySelectorAll('input[type="radio"]');
-            allInputs.forEach(input => {
-                input.checked = false;
-            });
-            
-            // Ẩn tất cả kết quả
-            const allResults = document.querySelectorAll('.result');
-            allResults.forEach(result => {
-                result.style.display = 'none';
-            });
-            
-            // Đặt lại màu viền câu hỏi
-            const allQuestions = document.querySelectorAll('.question');
-            allQuestions.forEach(question => {
-                question.style.borderLeft = '1px solid #e0e0e0';
-            });
-            
-            // Ẩn điểm
-            document.getElementById('scoreContainer').style.display = 'none';
-            
-            // Cuộn lên đầu trang
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
 </body>
 </html>
