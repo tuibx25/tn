@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc nghiệm HĐGD 11 - Rèn luyện phẩm chất, năng lực nghề nghiệp</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e6ef;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .header .subject {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .header .topic {
+            background-color: #e8f4fc;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .question {
+            background-color: #f9f9f9;
+            border-left: 4px solid #3498db;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .question-number span {
+            background-color: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+        
+        .question-text {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .options {
+            margin-left: 15px;
+        }
+        
+        .option {
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .correct-answer {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 0 5px 5px 0;
+            font-weight: bold;
+        }
+        
+        .answer-key {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .question {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Trắc nghiệm Hoạt động giáo dục lớp 11</h1>
+            <div class="subject">Chủ đề: Rèn luyện phẩm chất, năng lực phù hợp với nghề nghiệp</div>
+            <div class="topic">CĐ 9: Đánh giá điểm mạnh, điểm yếu của bản thân đối với từng nhóm nghề</div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>1</span> Câu 1</div>
+            <div class="question-text">Mục đích chính của việc đánh giá điểm mạnh, điểm yếu của bản thân đối với từng nhóm nghề là gì?</div>
+            <div class="options">
+                <div class="option">A. Để chứng tỏ bản thân hơn người khác.</div>
+                <div class="option">B. Để chọn nghề phù hợp với khả năng và sở thích.</div>
+                <div class="option">C. Để đáp ứng mong muốn của gia đình.</div>
+                <div class="option">D. Để theo xu hướng xã hội.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>2</span> Câu 2</div>
+            <div class="question-text">"Phẩm chất nghề nghiệp" thường được hiểu là gì?</div>
+            <div class="options">
+                <div class="option">A. Chỉ các kỹ năng chuyên môn.</div>
+                <div class="option">B. Những đặc điểm về nhân cách, đạo đức liên quan đến nghề.</div>
+                <div class="option">C. Khả năng học thuật thuần túy.</div>
+                <div class="option">D. Yếu tố di truyền không thay đổi được.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>3</span> Câu 3</div>
+            <div class="question-text">Yếu tố nào sau đây thuộc về "năng lực nghề nghiệp"?</div>
+            <div class="options">
+                <div class="option">A. Lòng trung thực.</div>
+                <div class="option">B. Khả năng giao tiếp, hợp tác.</div>
+                <div class="option">C. Tính cẩn thận.</div>
+                <div class="option">D. Sự kiên nhẫn.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>4</span> Câu 4</div>
+            <div class="question-text">Để đánh giá điểm mạnh, điểm yếu của bản thân, học sinh <strong>không nên</strong> làm gì?</div>
+            <div class="options">
+                <div class="option">A. Tự phân tích bản thân qua nhật ký, bảng câu hỏi.</div>
+                <div class="option">B. Nhận xét, so sánh với bạn bè để tự ti.</div>
+                <div class="option">C. Tham khảo ý kiến thầy cô, gia đình.</div>
+                <div class="option">D. Làm các bài trắc nghiệm hướng nghiệp.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>5</span> Câu 5</div>
+            <div class="question-text">Một học sinh có điểm mạnh là tư duy logic, yêu thích số học, cẩn thận, kiên trì. Nhóm nghề nào sau đây phù hợp nhất?</div>
+            <div class="options">
+                <div class="option">A. Nghệ thuật biểu diễn.</div>
+                <div class="option">B. Kế toán – tài chính.</div>
+                <div class="option">C. Hướng dẫn viên du lịch.</div>
+                <div class="option">D. Vận động viên thể thao.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>6</span> Câu 6</div>
+            <div class="question-text">Khi xác định sự phù hợp về phẩm chất, năng lực với nghề lựa chọn, cần dựa trên yếu tố nào?</div>
+            <div class="options">
+                <div class="option">A. Chỉ dựa vào mức lương của nghề.</div>
+                <div class="option">B. Kết hợp giữa khả năng bản thân và yêu cầu nghề nghiệp.</div>
+                <div class="option">C. Chỉ theo ý muốn của bố mẹ.</div>
+                <div class="option">D. Chỉ dựa vào độ "hot" của nghề.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>7</span> Câu 7</div>
+            <div class="question-text">Mô hình SWOT thường được dùng trong hướng nghiệp để làm gì?</div>
+            <div class="options">
+                <div class="option">A. Phân tích thị trường việc làm.</div>
+                <div class="option">B. Đánh giá điểm mạnh, điểm yếu, cơ hội và thách thức của bản thân.</div>
+                <div class="option">C. Lập kế hoạch tài chính cá nhân.</div>
+                <div class="option">D. Tìm hiểu hệ thống trường đào tạo.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>8</span> Câu 8</div>
+            <div class="question-text">Một bạn có ưu điểm là giao tiếp tốt, thích giúp đỡ người khác, nhưng nhược điểm là thiếu kiên nhẫn với công việc lặp lại. Nghề nào sau đây <strong>ít phù hợp</strong> nhất?</div>
+            <div class="options">
+                <div class="option">A. Nhân viên tư vấn khách hàng.</div>
+                <div class="option">B. Giáo viên mầm non.</div>
+                <div class="option">C. Công nhân lắp ráp dây chuyền.</div>
+                <div class="option">D. Tư vấn tâm lý học đường.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">C</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>9</span> Câu 9</div>
+            <div class="question-text">Trong rèn luyện phẩm chất, năng lực nghề nghiệp, điều quan trọng nhất là gì?</div>
+            <div class="options">
+                <div class="option">A. Sao chép theo người thành công.</div>
+                <div class="option">B. Nhận thức rõ về bản thân và kiên trì phát triển.</div>
+                <div class="option">C. Chỉ tập trung vào điểm mạnh.</div>
+                <div class="option">D. Đợi đến khi đi làm mới rèn luyện.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>10</span> Câu 10</div>
+            <div class="question-text">Hoạt động trải nghiệm hướng nghiệp giúp học sinh điều gì trong việc đánh giá bản thân?</div>
+            <div class="options">
+                <div class="option">A. Chỉ để có thêm bạn mới.</div>
+                <div class="option">B. Hiểu rõ hơn về nghề và so sánh với năng lực bản thân.</div>
+                <div class="option">C. Để được cộng điểm môn học.</div>
+                <div class="option">D. Chỉ để tham quan cho vui.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>11</span> Câu 11</div>
+            <div class="question-text">Nội dung nào thường <strong>không có</strong> trong "Sổ tay hướng nghiệp" của học sinh?</div>
+            <div class="options">
+                <div class="option">A. Thông tin về các ngành nghề.</div>
+                <div class="option">B. Bài tập đánh giá bản thân.</div>
+                <div class="option">C. Lịch sử hình thành nghề nghiệp qua các thời kỳ.</div>
+                <div class="option">D. Kế hoạch phát triển năng lực cá nhân.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">C</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>12</span> Câu 12</div>
+            <div class="question-text">Để rèn luyện phẩm chất <strong>trung thực</strong> trong nghề nghiệp, học sinh nên làm gì?</div>
+            <div class="options">
+                <div class="option">A. Chỉ cần trung thực khi đi làm.</div>
+                <div class="option">B. Rèn từ những việc nhỏ hàng ngày: học tập, sinh hoạt.</div>
+                <div class="option">C. Đó là tố chất bẩm sinh, không cần rèn.</div>
+                <div class="option">D. Chỉ cần trung thực trong thi cử.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>13</span> Câu 13</div>
+            <div class="question-text">Nếu một nghề đòi hỏi khả năng sáng tạo cao, nhưng bản thân chưa giỏi về điều này, học sinh nên làm gì?</div>
+            <div class="options">
+                <div class="option">A. Từ bỏ ngay nghề đó.</div>
+                <div class="option">B. Rèn luyện tư duy sáng tạo qua học tập, thực hành.</div>
+                <div class="option">C. Chọn nghề khác không cần sáng tạo.</div>
+                <div class="option">D. Giả vờ mình có sáng tạo khi phỏng vấn.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>14</span> Câu 14</div>
+            <div class="question-text">Yếu tố nào sau đây thuộc về <strong>năng lực</strong> nhiều hơn <strong>phẩm chất</strong>?</div>
+            <div class="options">
+                <div class="option">A. Tính kiên trì.</div>
+                <div class="option">B. Trách nhiệm.</div>
+                <div class="option">C. Kỹ năng sử dụng phần mềm thiết kế.</div>
+                <div class="option">D. Lòng nhân ái.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">C</span></div>
+        </div>
+        
+        <div class="question">
+            <div class="question-number"><span>15</span> Câu 15</div>
+            <div class="question-text">Sau khi xác định được nghề phù hợp, việc cần làm tiếp theo là gì?</div>
+            <div class="options">
+                <div class="option">A. Chờ đợi cơ hội đến.</div>
+                <div class="option">B. Lập kế hoạch học tập, rèn luyện để đáp ứng yêu cầu nghề.</div>
+                <div class="option">C. Thông báo cho mọi người biết.</div>
+                <div class="option">D. Không cần chuẩn bị gì thêm.</div>
+            </div>
+            <div class="correct-answer">✅ Đáp án đúng: <span class="answer-key">B</span></div>
+        </div>
+        
+        <div class="footer">
+            <p>Trắc nghiệm Hoạt động giáo dục lớp 11 - Chủ đề: Rèn luyện phẩm chất, năng lực phù hợp với nghề nghiệp</p>
+            <p>CĐ 9: Đánh giá điểm mạnh, điểm yếu của bản thân đối với từng nhóm nghề</p>
+        </div>
+    </div>
+</body>
+</html>
