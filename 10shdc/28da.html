@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đáp án & Giải thích - Đào tạo nghề Việt Nam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+            background-color: #F5F5DC; /* beige ấm */
+            color: #2c2b26;
+            padding: 35px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: 24px 28px;
+            margin-bottom: 32px;
+            text-align: center;
+            border-bottom: 5px solid #8B5A2B;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #8B4513;
+            letter-spacing: -0.3px;
+        }
+
+        .badge {
+            background: #F5DEB3;
+            color: #8B5A2B;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-top: 12px;
+            font-size: 0.85rem;
+        }
+
+        .subhead {
+            color: #0066CC;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+
+        /* Đáp án list */
+        .answers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .answer-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 18px 24px;
+            transition: 0.2s;
+            border-left: 8px solid #8B5A2B;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid #D3D3D3;
+            border-left-width: 8px;
+        }
+
+        .answer-card:hover {
+            background: #FEFCF5;
+            border-color: #D3D3D3;
+        }
+
+        .answer-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .num {
+            background: #8B5A2B;
+            color: white;
+            font-weight: bold;
+            width: 36px;
+            height: 36px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+
+        .answer-letter {
+            background: #F5DEB3;
+            padding: 4px 14px;
+            border-radius: 32px;
+            font-weight: 800;
+            color: #8B4513;
+            font-size: 1.1rem;
+        }
+
+        .answer-full {
+            font-weight: 600;
+            color: #004488;
+            font-size: 1rem;
+        }
+
+        .explanation {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px dashed #F5DEB3;
+            color: #4a4a48;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            background: #F5F5F5;
+            padding: 12px 16px;
+            border-radius: 20px;
+        }
+
+        .explanation i {
+            color: #8B5A2B;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        hr {
+            margin: 8px 0;
+        }
+
+        .footer {
+            margin-top: 48px;
+            text-align: center;
+            background: #F5F5F5;
+            padding: 18px;
+            border-radius: 60px;
+            color: #8B4513;
+            font-size: 0.85rem;
+            border: 1px solid #D3D3D3;
+        }
+
+        .print-button {
+            background: #0066CC;
+            border: none;
+            padding: 10px 26px;
+            color: white;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .print-button:hover {
+            background: #004488;
+        }
+
+        @media (max-width: 680px) {
+            .answer-card {
+                padding: 16px;
+            }
+            .answer-header {
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📘 ĐÁP ÁN & GIẢI THÍCH CHI TIẾT</h1>
+        <div class="badge">25 câu trắc nghiệm - Hệ thống đào tạo nghề nước ta</div>
+    </div>
+
+    <div class="answers-list" id="answersContainer">
+        <!-- JS sẽ render đáp án + giải thích -->
+    </div>
+
+</div>
+
+<script>
+    // Dữ liệu đáp án kèm giải thích (25 câu)
+    const answerData = [
+        { answer: "C", explanation: "Giáo dục nghề nghiệp đào tạo trình độ sơ cấp, trình độ trung cấp, trình độ cao đẳng và các chương trình đào tạo nghề nghiệp khác cho người học (Luật Giáo dục 2019)." },
+        { answer: "B", explanation: "Mục tiêu đào tạo nhân lực trực tiếp cho sản xuất, kinh doanh và dịch vụ, có năng lực hành nghề tương ứng." },
+        { answer: "B", explanation: "Trung cấp 1-2 năm (với học sinh tốt nghiệp THPT), cao đẳng 2-3 năm." },
+        { answer: "B", explanation: "Trước 2016, hệ nghề chú trọng thực hành nhiều hơn so với hệ chuyên nghiệp." },
+        { answer: "B", explanation: "Trình độ Trung cấp tuyển sinh học sinh tốt nghiệp THCS trở lên." },
+        { answer: "A", explanation: "Hợp nhất thành trường Trung cấp nhằm giảm chồng chéo hệ thống." },
+        { answer: "C", explanation: "Mục tiêu giảm ít nhất 20% cơ sở công lập, tăng cơ sở tư thục và FDI lên khoảng 45%." },
+        { answer: "C", explanation: "Khung trình độ quốc gia 8 bậc, GDNN chiếm 5 bậc (bậc 1 đến bậc 5)." },
+        { answer: "C", explanation: "Cả nước có 1.058 trung tâm giáo dục nghề nghiệp (số liệu tháng 6/2023)." },
+        { answer: "B", explanation: "Văn bằng mang tính mở, liên thông, tham chiếu khung ASEAN (AQRF)." },
+        { answer: "B", explanation: "Nghị định 338/2025 hỗ trợ đào tạo nghề cho người lao động khu vực nông thôn và thanh niên đặc thù." },
+        { answer: "B", explanation: "Mức hỗ trợ tối đa 4 triệu đồng/người/khóa học." },
+        { answer: "C", explanation: "Hỗ trợ tiền ăn 50.000 đồng/người/ngày cho khóa đào tạo nghề trình độ sơ cấp." },
+        { answer: "B", explanation: "Thời gian hỗ trợ đào tạo nghề cho lao động thất nghiệp không quá 6 tháng." },
+        { answer: "B", explanation: "Hỗ trợ tiền đi lại 200.000 đồng/khóa cho người cách địa điểm đào tạo từ 15 km." },
+        { answer: "D", explanation: "Thanh niên hoàn thành nghĩa vụ quân sự được hỗ trợ học nghề trong thời hạn 60 tháng." },
+        { answer: "B", explanation: "Chính sách hỗ trợ một lần duy nhất cho người lao động nông thôn và các đối tượng đặc thù." },
+        { answer: "B", explanation: "Trung tâm dịch vụ việc làm là đầu mối hỗ trợ học nghề từ quỹ BHTN." },
+        { answer: "C", explanation: "Trên 80% người tốt nghiệp cơ sở GDNN có việc làm sau đào tạo." },
+        { answer: "C", explanation: "Lợi thế: thời gian đào tạo ngắn, chi phí thấp, dễ xin việc làm thực tế." },
+        { answer: "A", explanation: "Học sinh tốt nghiệp THCS có thể học trung cấp nghề (hệ 9+)." },
+        { answer: "C", explanation: "Thu nhập khởi điểm thấp hơn và cơ hội thăng tiến có thể hạn chế hơn so với cao đẳng." },
+        { answer: "B", explanation: "Các ngành như chế biến món ăn, pha chế, tin học văn phòng được đăng ký nhiều." },
+        { answer: "B", explanation: "Chương trình gắn với nhu cầu doanh nghiệp, thực hành sát thực tế giúp sinh viên có việc làm ngay." },
+        { answer: "B", explanation: "Hỗ trợ học nghề giúp người lao động nâng cao kỹ năng, chuyển đổi nghề nghiệp và tái hòa nhập thị trường lao động." }
+    ];
+
+    // Câu hỏi gốc (để hiển thị nội dung đáp án đầy đủ)
+    const questionTexts = [
+        "Theo Luật Giáo dục 2019, giáo dục nghề nghiệp trong hệ thống giáo dục quốc dân đào tạo các trình độ nào?",
+        "Mục tiêu của giáo dục nghề nghiệp là gì?",
+        "Điểm khác biệt cơ bản nhất về thời gian đào tạo giữa trình độ trung cấp và cao đẳng đối với học sinh đã tốt nghiệp THPT là:",
+        "Điểm khác nhau về mục tiêu đào tạo giữa 'hệ nghề' và 'hệ chuyên nghiệp' trước năm 2016 là gì?",
+        "Theo quy định hiện hành, đối tượng nào có thể theo học trình độ trung cấp?",
+        "Từ năm 2016, các trường Trung cấp nghề và Trung cấp chuyên nghiệp được hợp nhất thành loại hình trường nào?",
+        "Theo quy hoạch đến năm 2025, xu hướng phát triển mạng lưới cơ sở giáo dục nghề nghiệp (GDNN) ở nước ta là gì?",
+        "Trong Khung trình độ quốc gia Việt Nam, giáo dục nghề nghiệp chiếm mấy bậc?",
+        "Tính đến tháng 6/2023, loại hình cơ sở giáo dục nghề nghiệp nào chiếm số lượng nhiều nhất?",
+        "Văn bằng tốt nghiệp của hệ thống giáo dục nghề nghiệp mang tính chất gì để phù hợp với khu vực và thế giới?",
+        "Theo Nghị định 338/2025/NĐ-CP có hiệu lực từ ngày 01/01/2026, đối tượng nào dưới đây được hỗ trợ học nghề?",
+        "Người lao động ở khu vực nông thôn được hỗ trợ học nghề tối đa bao nhiêu tiền cho mỗi khóa học?",
+        "Ngoài hỗ trợ học phí, người lao động tham gia khóa đào tạo nghề trình độ sơ cấp còn được hỗ trợ tiền ăn với mức bao nhiêu?",
+        "Đối với lao động tham gia bảo hiểm thất nghiệp (BHTN), thời gian hỗ trợ đào tạo nghề tối đa là bao lâu?",
+        "Mức hỗ trợ tiền đi lại cho người lao động cư trú cách địa điểm đào tạo từ 15 km trở lên là bao nhiêu?",
+        "Trường hợp người lao động là thanh niên hoàn thành nghĩa vụ quân sự, họ có thể được hỗ trợ học nghề trong thời hạn bao lâu kể từ ngày hoàn thành nghĩa vụ?",
+        "Nhận định nào sau đây đúng về số lần được hỗ trợ học nghề từ ngân sách nhà nước?",
+        "Để được hỗ trợ học nghề từ quỹ Bảo hiểm thất nghiệp, người lao động cần thông qua đơn vị nào?",
+        "Theo số liệu thống kê, tỷ lệ người tốt nghiệp các cơ sở giáo dục nghề nghiệp có việc làm sau đào tạo là khoảng bao nhiêu?",
+        "Một trong những lợi thế lớn nhất của việc học trung cấp nghề so với học đại học là gì?",
+        "Đối với học sinh đã tốt nghiệp Trung học cơ sở (THCS), các em có thể lựa chọn hướng đi nào sau đây?",
+        "Nhược điểm của lao động tốt nghiệp trung cấp nghề so với cao đẳng nghề thường là:",
+        "Các ngành nghề nào sau đây đang được nhiều lao động tại Hà Nội đăng ký học khi tham gia bảo hiểm thất nghiệp?",
+        "Một trong những yếu tố giúp sinh viên trường nghề có việc làm ngay sau tốt nghiệp là:",
+        "Một trong những vai trò quan trọng của chính sách hỗ trợ học nghề trong hệ thống An sinh xã hội là:"
+    ];
+
+    function renderAnswers() {
+        const container = document.getElementById('answersContainer');
+        let html = '';
+        for (let i = 0; i < answerData.length; i++) {
+            const num = i + 1;
+            const ans = answerData[i];
+            html += `
+                <div class="answer-card">
+                    <div class="answer-header">
+                        <div class="num">${num}</div>
+                        <div class="answer-letter">Đáp án: ${ans.answer}</div>
+                        <div class="answer-full">${questionTexts[i]}</div>
+                    </div>
+                    <div class="explanation">
+                        <i>📖 Giải thích:</i> ${ans.explanation}
+                    </div>
+                </div>
+            `;
+        }
+        container.innerHTML = html;
+    }
+
+    renderAnswers();
+</script>
+</body>
+</html>
