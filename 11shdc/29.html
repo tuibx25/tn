@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Câu hỏi trắc nghiệm - Tra cứu thông tin cơ sở giáo dục</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #F5F5F5;
+            padding: 40px 20px;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #8B5A2B;
+            color: #FFFFFF;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #FFFFFF;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+            color: #F5F5DC;
+        }
+
+        .questions-wrapper {
+            padding: 30px;
+            background: #FFFFFF;
+        }
+
+        .question-card {
+            background: #F5F5F5;
+            border-left: 5px solid #0066CC;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .question-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #F5F5DC;
+        }
+
+        .question-number {
+            display: inline-block;
+            background: #0066CC;
+            color: #FFFFFF;
+            width: 35px;
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 15px 0;
+            color: #000000;
+            line-height: 1.5;
+        }
+
+        .options {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .options li {
+            margin: 12px 0;
+            font-size: 16px;
+            color: #000000;
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .options li strong {
+            display: inline-block;
+            width: 28px;
+            color: #8B4513;
+            font-weight: 700;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            border-top: 2px dashed #D3D3D3;
+        }
+
+        .footer {
+            background: #F5DEB3;
+            padding: 20px;
+            text-align: center;
+            color: #000000;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .questions-wrapper {
+                padding: 20px;
+            }
+            .question-text {
+                font-size: 16px;
+            }
+            .options li {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 25 Câu hỏi trắc nghiệm</h1>
+            <p>Trao đổi về thông tin cơ bản của các cơ sở giáo dục đại học, cơ sở giáo dục nghề nghiệp liên quan đến nhóm nghề/nghề định lựa chọn</p>
+        </div>
+        <div class="questions-wrapper">
+            <!-- Câu 1 -->
+            <div class="question-card">
+                <div class="question-number">1</div>
+                <div class="question-text">Theo Luật Giáo dục nghề nghiệp 2014, cơ sở giáo dục nghề nghiệp bao gồm những cấp độ nào sau đây?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Trung cấp nghề, cao đẳng nghề, đại học.</li>
+                    <li><strong>B.</strong> Trung cấp, cao đẳng, đại học.</li>
+                    <li><strong>C.</strong> Trung cấp, cao đẳng.</li>
+                    <li><strong>D.</strong> Sơ cấp, trung cấp, cao đẳng.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 2 -->
+            <div class="question-card">
+                <div class="question-number">2</div>
+                <div class="question-text">Điểm khác biệt cơ bản giữa đào tạo tại trường đại học và trường cao đẳng nghề đối với cùng một nhóm ngành là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Thời gian đào tạo và tính ứng dụng.</li>
+                    <li><strong>B.</strong> Màu áo tốt nghiệp.</li>
+                    <li><strong>C.</strong> Địa điểm thực tập.</li>
+                    <li><strong>D.</strong> Số lượng môn học lý luận chính trị.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 3 -->
+            <div class="question-card">
+                <div class="question-number">3</div>
+                <div class="question-text">Khi tìm hiểu một trường đại học, thông tin nào sau đây KHÔNG thuộc "thông tin cơ bản" cần xác định?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Mã trường, mã ngành.</li>
+                    <li><strong>B.</strong> Chỉ tiêu tuyển sinh từng phương thức.</li>
+                    <li><strong>C.</strong> Danh sách giảng viên cơ hữu chi tiết từng người.</li>
+                    <li><strong>D.</strong> Các tổ hợp xét tuyển.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 4 -->
+            <div class="question-card">
+                <div class="question-number">4</div>
+                <div class="question-text">Để so sánh mức độ cạnh tranh của một ngành giữa các trường, học sinh cần xem xét dữ liệu nào quan trọng nhất từ các năm trước?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Điểm chuẩn và số lượng thí sinh đăng ký.</li>
+                    <li><strong>B.</strong> Học phí dự kiến.</li>
+                    <li><strong>C.</strong> Địa chỉ cơ sở đào tạo.</li>
+                    <li><strong>D.</strong> Ngày nhập học.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 5 -->
+            <div class="question-card">
+                <div class="question-number">5</div>
+                <div class="question-text">Một trường cao đẳng nghề thường công bố phương thức xét tuyển nào phổ biến nhất?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Xét tuyển kết hợp chứng chỉ quốc tế.</li>
+                    <li><strong>B.</strong> Xét tuyển dựa trên kết quả kỳ thi tốt nghiệp THPT và xét học bạ.</li>
+                    <li><strong>C.</strong> Phỏng vấn trực tiếp duy nhất.</li>
+                    <li><strong>D.</strong> Thi năng khiếu bắt buộc.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 6 -->
+            <div class="question-card">
+                <div class="question-number">6</div>
+                <div class="question-text">Khi trao đổi với cán bộ tư vấn tuyển sinh, để đánh giá chất lượng đào tạo thực tế của một ngành, câu hỏi hiệu quả nhất là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Trường có ký túc xá không?</li>
+                    <li><strong>B.</strong> Tỷ lệ sinh viên có việc làm đúng ngành sau 1 năm tốt nghiệp là bao nhiêu?</li>
+                    <li><strong>C.</strong> Thời gian học mỗi ngày là mấy tiếng?</li>
+                    <li><strong>D.</strong> Trường có tổ chức lễ khai giảng lớn không?</li>
+                </ul>
+            </div>
+
+            <!-- Câu 7 -->
+            <div class="question-card">
+                <div class="question-number">7</div>
+                <div class="question-text">Một cơ sở giáo dục nghề nghiệp uy tín thường có điểm mạnh nổi bật so với đại học ở khía cạnh:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Bằng cấp có giá trị quốc tế.</li>
+                    <li><strong>B.</strong> Trang bị kỹ năng thực hành, xưởng thực tập hiện đại.</li>
+                    <li><strong>C.</strong> Nghiên cứu khoa học chuyên sâu.</li>
+                    <li><strong>D.</strong> Chương trình đào tạo sau đại học đa dạng.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 8 -->
+            <div class="question-card">
+                <div class="question-number">8</div>
+                <div class="question-text">Nhóm ngành "Công nghệ thông tin" tại các trường đại học thường có đặc điểm chung về cơ hội việc làm là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Chỉ làm việc trong cơ quan nhà nước.</li>
+                    <li><strong>B.</strong> Có nhu cầu nhân lực cao, linh hoạt ở nhiều lĩnh vực.</li>
+                    <li><strong>C.</strong> Khó xin việc do bão hòa.</li>
+                    <li><strong>D.</strong> Bắt buộc phải có chứng chỉ hành nghề.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 9 -->
+            <div class="question-card">
+                <div class="question-number">9</div>
+                <div class="question-text">Nếu muốn trở thành kỹ thuật viên ô tô tay nghề cao, ra trường đi làm ngay, hướng lựa chọn phù hợp nhất là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Học đại học chuyên ngành cơ khí ô tô.</li>
+                    <li><strong>B.</strong> Học cao đẳng nghề hoặc trung cấp nghề có xưởng thực hành tốt.</li>
+                    <li><strong>C.</strong> Học văn bằng 2 đại học sư phạm.</li>
+                    <li><strong>D.</strong> Học cao học tại nước ngoài.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 10 -->
+            <div class="question-card">
+                <div class="question-number">10</div>
+                <div class="question-text">Khi hai trường đại học cùng đào tạo ngành Quản trị kinh doanh, yếu tố nào sau đây giúp phân biệt định hướng đào tạo khác biệt rõ nhất?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Màu sắc logo trường.</li>
+                    <li><strong>B.</strong> Các chuyên ngành/chương trình trọng điểm (ví dụ: logistics, marketing, quản trị nhân sự).</li>
+                    <li><strong>C.</strong> Số lượng sinh viên theo học.</li>
+                    <li><strong>D.</strong> Năm thành lập trường.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 11 -->
+            <div class="question-card">
+                <div class="question-number">11</div>
+                <div class="question-text">Một học sinh có học lực trung bình khá, mong muốn làm trong ngành du lịch khách sạn, ưu tiên thực hành sớm. Phương án tối ưu là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Chỉ xét nguyện vọng vào trường đại học top đầu.</li>
+                    <li><strong>B.</strong> Tìm hiểu các trường cao đẳng nghề du lịch hoặc trung cấp có liên kết doanh nghiệp.</li>
+                    <li><strong>C.</strong> Bỏ qua việc tìm hiểu và chọn ngành khác.</li>
+                    <li><strong>D.</strong> Chỉ dựa vào điểm chuẩn năm trước để chọn.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 12 -->
+            <div class="question-card">
+                <div class="question-number">12</div>
+                <div class="question-text">Nguồn thông tin chính xác nhất về học phí và chính sách học bổng của một trường đại học là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Các group hội sinh viên trên Facebook.</li>
+                    <li><strong>B.</strong> Đề án tuyển sinh được trường công bố trên website chính thức.</li>
+                    <li><strong>C.</strong> Ý kiến của bạn bè đã học trước.</li>
+                    <li><strong>D.</strong> Trang web tổng hợp tin tức.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 13 -->
+            <div class="question-card">
+                <div class="question-number">13</div>
+                <div class="question-text">Đối với hệ cao đẳng chính quy, sinh viên có thể được hưởng chính sách hỗ trợ gì nếu thuộc hộ nghèo, cận nghèo?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Miễn 100% học phí và vay vốn ưu đãi qua chính sách tín dụng học sinh, sinh viên.</li>
+                    <li><strong>B.</strong> Không có chính sách nào.</li>
+                    <li><strong>C.</strong> Chỉ được giảm 10% học phí.</li>
+                    <li><strong>D.</strong> Được cấp bằng khen.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 14 -->
+            <div class="question-card">
+                <div class="question-number">14</div>
+                <div class="question-text">Hoạt động nào sau đây giúp học sinh có trải nghiệm thực tế nhất về môi trường đào tạo của một cơ sở giáo dục nghề nghiệp?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Đọc tờ rơi quảng cáo.</li>
+                    <li><strong>B.</strong> Tham quan ngày hội tư vấn tuyển sinh và trải nghiệm workshop tại trường.</li>
+                    <li><strong>C.</strong> Gọi điện thoại hỏi số điện thoại bảo vệ.</li>
+                    <li><strong>D.</strong> Xem video giới thiệu trên TikTok.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 15 -->
+            <div class="question-card">
+                <div class="question-number">15</div>
+                <div class="question-text">Khi tham gia một buổi tư vấn trực tiếp, để hiểu rõ về cơ hội việc làm sau tốt nghiệp, nên đặt câu hỏi như thế nào?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> "Ngành này có dễ xin việc không?"</li>
+                    <li><strong>B.</strong> "Trường có bộ phận hỗ trợ việc làm không? Doanh nghiệp nào thường xuyên tuyển dụng sinh viên của trường?"</li>
+                    <li><strong>C.</strong> "Lương khởi điểm bao nhiêu?"</li>
+                    <li><strong>D.</strong> "Có được giới thiệu việc làm không?"</li>
+                </ul>
+            </div>
+
+            <!-- Câu 16 -->
+            <div class="question-card">
+                <div class="question-number">16</div>
+                <div class="question-text">Trong quá trình tìm hiểu thông tin, việc "đối sánh" (so sánh) giữa các trường nên được thực hiện dựa trên tiêu chí nào trước tiên?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Màu sắc đồng phục.</li>
+                    <li><strong>B.</strong> Khoảng cách từ nhà đến trường.</li>
+                    <li><strong>C.</strong> Chương trình đào tạo, học phí, cơ hội việc làm và điều kiện xét tuyển.</li>
+                    <li><strong>D.</strong> Đánh giá từ hội sinh viên cũ.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 17 -->
+            <div class="question-card">
+                <div class="question-number">17</div>
+                <div class="question-text">Dấu hiệu nào sau đây cảnh báo thông tin tuyển sinh có thể thiếu chính xác hoặc không minh bạch?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Trường công bố đề án tuyển sinh chi tiết.</li>
+                    <li><strong>B.</strong> Trường cam kết "100% có việc làm ngay sau tốt nghiệp" nhưng không đưa ra số liệu kiểm chứng.</li>
+                    <li><strong>C.</strong> Trường tổ chức ngày hội việc làm hàng năm.</li>
+                    <li><strong>D.</strong> Trường có website với tên miền .edu.vn.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 18 -->
+            <div class="question-card">
+                <div class="question-number">18</div>
+                <div class="question-text">Một cơ sở giáo dục đại học hợp pháp tại Việt Nam bắt buộc phải có:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Quyết định thành lập hoặc cho phép hoạt động của Bộ Giáo dục và Đào tạo/UBND cấp tỉnh (tùy thẩm quyền).</li>
+                    <li><strong>B.</strong> Giấy phép kinh doanh của Sở Kế hoạch Đầu tư.</li>
+                    <li><strong>C.</strong> Website bán hàng online.</li>
+                    <li><strong>D.</strong> Hợp tác với ít nhất 10 trường nước ngoài.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 19 -->
+            <div class="question-card">
+                <div class="question-number">19</div>
+                <div class="question-text">Bạn A muốn trở thành điều dưỡng viên. Bạn phân vân giữa học Đại học Y Dược (4 năm) và Cao đẳng Y tế (3 năm). Lời khuyên phù hợp dựa trên thông tin cơ bản về hai hệ là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Học đại học chắc chắn có việc làm hơn.</li>
+                    <li><strong>B.</strong> Học cao đẳng ra trường sớm, được hành nghề điều dưỡng như nhau, có thể học liên thông sau.</li>
+                    <li><strong>C.</strong> Chỉ nên học đại học vì cao đẳng không được cấp chứng chỉ hành nghề.</li>
+                    <li><strong>D.</strong> Cả hai đều không được hành nghề.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 20 -->
+            <div class="question-card">
+                <div class="question-number">20</div>
+                <div class="question-text">Một trường cao đẳng nghề có thông báo tuyển sinh "hệ 9+". Điều này có nghĩa là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Học sinh tốt nghiệp lớp 9 có thể học tích hợp văn hóa và nghề.</li>
+                    <li><strong>B.</strong> Học sinh phải học 9 năm đại học.</li>
+                    <li><strong>C.</strong> Chỉ tuyển sinh viên đã tốt nghiệp lớp 9 cách đây 9 năm.</li>
+                    <li><strong>D.</strong> Học phí 9 triệu đồng/năm.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 21 -->
+            <div class="question-card">
+                <div class="question-number">21</div>
+                <div class="question-text">Để kiểm tra một ngành đào tạo tại trường đại học có được phép đào tạo hay không, cần tra cứu trên cơ sở dữ liệu nào?</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Danh sách các hội nhóm sinh viên.</li>
+                    <li><strong>B.</strong> Trang thông tin điện tử của Bộ Giáo dục và Đào tạo (hoặc cổng thông tin tuyển sinh).</li>
+                    <li><strong>C.</strong> Google Maps.</li>
+                    <li><strong>D.</strong> Trang web của Tổng cục Du lịch.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 22 -->
+            <div class="question-card">
+                <div class="question-number">22</div>
+                <div class="question-text">Khi tìm hiểu về cơ sở vật chất phục vụ thực hành cho nhóm ngành kỹ thuật (cơ khí, điện, xây dựng), cần quan tâm nhiều nhất đến:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Số lượng nhà vệ sinh.</li>
+                    <li><strong>B.</strong> Xưởng thực hành, máy móc thiết bị và tỷ lệ sinh viên/máy.</li>
+                    <li><strong>C.</strong> Màu sơn tường.</li>
+                    <li><strong>D.</strong> Diện tích sân bóng.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 23 -->
+            <div class="question-card">
+                <div class="question-number">23</div>
+                <div class="question-text">Một học sinh muốn theo đuổi nghề "lập trình viên". So sánh giữa học đại học CNTT và học cao đẳng CNTT, điểm khác biệt lớn nhất về đầu ra thường là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Đại học có thể làm việc ở nước ngoài, cao đẳng thì không.</li>
+                    <li><strong>B.</strong> Đại học có nền tảng thuật toán, tư duy hệ thống sâu hơn; cao đẳng tập trung vào công nghệ, ngôn ngữ lập trình cụ thể.</li>
+                    <li><strong>C.</strong> Cao đẳng không được cấp bằng.</li>
+                    <li><strong>D.</strong> Đại học không phải học toán.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 24 -->
+            <div class="question-card">
+                <div class="question-number">24</div>
+                <div class="question-text">Thông tin về "tỷ lệ sinh viên có việc làm sau tốt nghiệp" do trường công bố cần được xem xét kỹ lưỡng vì:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Luôn luôn chính xác 100%.</li>
+                    <li><strong>B.</strong> Có thể tính theo các tiêu chí khác nhau (đúng ngành, sau 6 tháng, 1 năm) và không nhất thiết có kiểm định độc lập.</li>
+                    <li><strong>C.</strong> Đây là thông tin bắt buộc phải công khai theo tháng.</li>
+                    <li><strong>D.</strong> Không quan trọng bằng học phí.</li>
+                </ul>
+            </div>
+
+            <!-- Câu 25 -->
+            <div class="question-card">
+                <div class="question-number">25</div>
+                <div class="question-text">Việc chủ động trao đổi, tìm hiểu thông tin về các cơ sở giáo dục liên quan đến nhóm nghề định chọn mang lại lợi ích quan trọng nhất là:</div>
+                <ul class="options">
+                    <li><strong>A.</strong> Giúp tránh được áp lực thi cử.</li>
+                    <li><strong>B.</strong> Giúp đưa ra quyết định phù hợp với năng lực, sở thích, điều kiện gia đình và nhu cầu thị trường lao động.</li>
+                    <li><strong>C.</strong> Giúp được miễn học phí.</li>
+                    <li><strong>D.</strong> Giúp được tuyển thẳng vào tất cả các trường.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            📌 25 câu hỏi trắc nghiệm - Hãy kiểm tra đáp án tại file riêng
+        </div>
+    </div>
+</body>
+</html>
